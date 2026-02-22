@@ -1,0 +1,92 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 329px;
+    background-color: $footer_bg;
+    display: flex;
+    justify-content: center;
+
+    .footer_nav {
+        border-bottom: 1px solid $footer_color;
+        height: 214px;
+        display: flex;
+        align-items: center;
+        gap: 101px;
+
+        .footer_logos {
+            display: flex;
+            gap: 65px;
+        }
+
+        .nav {
+            display: flex;
+            list-style-type: none;
+            text-transform: uppercase;
+            gap: 46px;
+
+            a {
+                text-decoration: none;
+                color: $footer_color;
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+
+        button {
+            text-transform: uppercase;
+            background-color: transparent;
+            cursor: pointer;
+            border: 1px solid $footer_color;
+            font-size: 18px;
+            color: $footer_color;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 26px 43px;
+            border-radius: 5px;
+
+            img {
+                width: 24.28px;
+                height: 22px;
+            }
+        }
+    }
+
+    .footer_soc_networks {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 115px;
+
+        .copyright {
+            display: flex;
+            color: $footer_color;
+            gap: 50px;
+        }
+
+        .soc_networks {
+            display: flex;
+            gap: 40px;
+        }
+    }
+
+    @include responsive(lg) {
+        .footer_nav {
+            gap: 35px;
+            padding: 0px 40px;
+
+            .footer_logos {
+                gap: 30px;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+        }
+
+        .footer_soc_networks {
+            padding: 0px 40px;
+        }
+    }
+}

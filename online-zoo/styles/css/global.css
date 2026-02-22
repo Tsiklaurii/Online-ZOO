@@ -16,10 +16,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 504px;
   height: 110px;
   background-color: #F58021;
-  padding: 0px 260px;
+}
+header .container {
+  display: flex;
+  gap: 504px;
 }
 header .menu {
   display: flex;
@@ -53,9 +55,8 @@ header .networks img {
   width: 40px;
   height: 40px;
 }
-@media (max-width: 1200px) {
-  header {
-    padding: 0px 100px;
+@media (max-width: 1400px) {
+  header .container {
     gap: 163px;
   }
   header .menu {
@@ -63,5 +64,85 @@ header .networks img {
   }
   header .nav {
     gap: 30px;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 329px;
+  background-color: #20113D;
+  display: flex;
+  justify-content: center;
+}
+footer .footer_nav {
+  border-bottom: 1px solid #FFFFFF;
+  height: 214px;
+  display: flex;
+  align-items: center;
+  gap: 101px;
+}
+footer .footer_nav .footer_logos {
+  display: flex;
+  gap: 65px;
+}
+footer .footer_nav .nav {
+  display: flex;
+  list-style-type: none;
+  text-transform: uppercase;
+  gap: 46px;
+}
+footer .footer_nav .nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 600;
+}
+footer .footer_nav button {
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #FFFFFF;
+  font-size: 18px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 26px 43px;
+  border-radius: 5px;
+}
+footer .footer_nav button img {
+  width: 24.28px;
+  height: 22px;
+}
+footer .footer_soc_networks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 115px;
+}
+footer .footer_soc_networks .copyright {
+  display: flex;
+  color: #FFFFFF;
+  gap: 50px;
+}
+footer .footer_soc_networks .soc_networks {
+  display: flex;
+  gap: 40px;
+}
+@media (max-width: 1400px) {
+  footer .footer_nav {
+    gap: 35px;
+    padding: 0px 40px;
+  }
+  footer .footer_nav .footer_logos {
+    gap: 30px;
+  }
+  footer .footer_nav .nav {
+    gap: 20px;
+  }
+  footer .footer_soc_networks {
+    padding: 0px 40px;
   }
 }/*# sourceMappingURL=global.css.map */

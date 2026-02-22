@@ -2,10 +2,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 504px;
     height: 110px;
-    background-color: #F58021;
-    padding: 0px 260px;
+    background-color: $header_bg;
+
+    .container {
+        display: flex;
+        gap: 504px;
+    }
 
     .menu {
         display: flex;
@@ -26,13 +29,13 @@ header {
 
         a {
             text-decoration: none;
-            color: #000000;
+            color: $header_nav;
             font-weight: 600;
             font-size: 18px;
         }
 
         .active {
-            color: #00A092;
+            color: $avtive_nav;
         }
     }
 
@@ -47,8 +50,9 @@ header {
     }
 
     @include responsive(lg) {
-        padding: 0px 100px;
-        gap: 163px;
+        .container {
+            gap: 163px;
+        }
 
         .menu {
             gap: 80px;
