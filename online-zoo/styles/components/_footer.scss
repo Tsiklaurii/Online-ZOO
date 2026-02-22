@@ -45,10 +45,13 @@ footer {
             gap: 10px;
             padding: 26px 43px;
             border-radius: 5px;
+            transition: ease 0.3s;
 
-            img {
-                width: 24.28px;
-                height: 22px;
+            @media (hover: hover) {
+                &:hover {
+                    color: $footer_bg;
+                    background-color: $footer_color;
+                }
             }
         }
     }
@@ -87,6 +90,75 @@ footer {
 
         .footer_soc_networks {
             padding: 0px 40px;
+        }
+    }
+
+    @include responsive(md) {
+        height: 545px;
+
+        .footer_nav {
+            flex-direction: column;
+            justify-content: center;
+            height: 346px;
+
+            .footer_logos {
+                gap: 81px;
+            }
+
+            .nav {
+                gap: 53px;
+            }
+        }
+
+        .footer_soc_networks {
+            flex-direction: column;
+            justify-content: space-around;
+            height: 199px;
+        }
+    }
+
+    @include responsive(sm) {
+        height: 710px;
+
+        .footer_nav {
+            height: 460px;
+            border: none;
+
+            .footer_logos {
+                flex-direction: column;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .nav {
+                gap: 15px;
+            }
+
+            button {
+                text-transform: capitalize;
+                height: 45px;
+            }
+        }
+
+        .footer_soc_networks {
+            justify-content: center;
+            gap: 20px;
+
+            .soc_networks {
+                order: -1;
+                border-bottom: 1px solid $footer_color;
+                width: 320px;
+                justify-content: center;
+                padding-bottom: 30px;
+            }
+
+            .copyright {
+                padding-top: 12px;
+                align-items: center;
+                flex-direction: column;
+                gap: 30px;
+                order: 1;
+            }
         }
     }
 }

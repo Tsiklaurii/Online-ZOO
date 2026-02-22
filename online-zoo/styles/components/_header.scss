@@ -16,6 +16,10 @@ header {
         gap: 67px;
     }
 
+    .hamburger {
+        display: none;
+    }
+
     .logo {
         width: 96px;
         height: 50px;
@@ -32,10 +36,22 @@ header {
             color: $header_nav;
             font-weight: 600;
             font-size: 18px;
+
+            @media (hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
 
         .active {
-            color: $avtive_nav;
+            color: $active_nav;
+
+            @media (hover: hover) {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
         }
     }
 
@@ -60,6 +76,32 @@ header {
 
         .nav {
             gap: 30px;
+        }
+    }
+
+    @include responsive(md) {
+        .container {
+            gap: 447px;
+            align-items: center;
+        }
+
+        .networks,
+        .menu {
+            display: none;
+        }
+
+        .hamburger {
+            display: block;
+            background-color: transparent;
+            border: none;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    @include responsive(sm) {
+        .container {
+            gap: 146px;
         }
     }
 }
