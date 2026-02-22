@@ -1,1 +1,67 @@
-/*# sourceMappingURL=global.css.map */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 504px;
+  height: 110px;
+  background-color: #F58021;
+  padding: 0px 260px;
+}
+header .menu {
+  display: flex;
+  align-items: center;
+  gap: 67px;
+}
+header .logo {
+  width: 96px;
+  height: 50px;
+}
+header .nav {
+  display: flex;
+  list-style-type: none;
+  gap: 48.25px;
+  text-transform: uppercase;
+}
+header .nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  font-size: 18px;
+}
+header .nav .active {
+  color: #00A092;
+}
+header .networks {
+  display: flex;
+  gap: 30px;
+}
+header .networks img {
+  width: 40px;
+  height: 40px;
+}
+@media (max-width: 1200px) {
+  header {
+    padding: 0px 100px;
+    gap: 163px;
+  }
+  header .menu {
+    gap: 80px;
+  }
+  header .nav {
+    gap: 30px;
+  }
+}/*# sourceMappingURL=global.css.map */

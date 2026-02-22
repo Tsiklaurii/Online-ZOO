@@ -1,0 +1,30 @@
+$desktop: 1920px;
+$lg: 1200px;
+$md: 640px;
+$sm: 320px;
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint ==desktop {
+        @media (max-width: $desktop) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==lg {
+        @media (max-width: $lg) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==md {
+        @media (max-width: $md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==sm {
+        @media (max-width: $sm) {
+            @content;
+        }
+    }
+}

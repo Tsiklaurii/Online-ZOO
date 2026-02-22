@@ -1,0 +1,61 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 504px;
+    height: 110px;
+    background-color: #F58021;
+    padding: 0px 260px;
+
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 67px;
+    }
+
+    .logo {
+        width: 96px;
+        height: 50px;
+    }
+
+    .nav {
+        display: flex;
+        list-style-type: none;
+        gap: 48.25px;
+        text-transform: uppercase;
+
+        a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .active {
+            color: #00A092;
+        }
+    }
+
+    .networks {
+        display: flex;
+        gap: 30px;
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    @include responsive(lg) {
+        padding: 0px 100px;
+        gap: 163px;
+
+        .menu {
+            gap: 80px;
+        }
+
+        .nav {
+            gap: 30px;
+        }
+    }
+}
