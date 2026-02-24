@@ -1,6 +1,4 @@
 footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     height: 329px;
     background-color: $footer_bg;
@@ -123,6 +121,7 @@ footer {
         .footer_nav {
             height: 460px;
             border: none;
+            padding: 0;
 
             .footer_logos {
                 flex-direction: column;
@@ -132,6 +131,10 @@ footer {
 
             .nav {
                 gap: 15px;
+
+                a {
+                    font-size: 16px;
+                }
             }
 
             button {
@@ -143,6 +146,7 @@ footer {
         .footer_soc_networks {
             justify-content: center;
             gap: 20px;
+            padding: 0;
 
             .soc_networks {
                 order: -1;

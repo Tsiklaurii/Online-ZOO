@@ -7,3 +7,390 @@
 body {
     font-family: "Montserrat", sans-serif;
 }
+
+.main_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 790px;
+    background-image: url('../../assets/images/Background.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    div {
+        width: 1400px;
+
+        h1 {
+            color: #00A092;
+            font-size: 82px;
+            font-weight: 800;
+            text-transform: uppercase;
+            width: 890px;
+            margin-bottom: 50px;
+        }
+
+        p {
+            line-height: 150%;
+            font-size: 18px;
+            width: 430px;
+            margin-bottom: 50px;
+        }
+
+        button {
+            background-color: $header_bg;
+            border: none;
+            border-radius: 5px;
+            padding: 26px 45px;
+            font-size: 18px;
+            line-height: 100%;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $footer_color;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            cursor: pointer;
+            transition: ease 0.3s;
+
+            img {
+                width: 24px;
+                height: 22px;
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    background-color: $orange_btn_hover;
+                }
+            }
+        }
+    }
+
+    @include responsive(lg) {
+        height: 690px;
+        background-size: cover;
+
+        div {
+            width: 1000px;
+        }
+    }
+
+    @include responsive(md) {
+        height: 644px;
+        background-size: 140%;
+        background-position: 45% 100%;
+
+        div {
+            width: 600px;
+
+            h1 {
+                font-size: 72px;
+                margin-bottom: 30px;
+                width: 600px;
+            }
+
+            p {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    @include responsive(sm) {
+        height: 686px;
+        background-size: 180%;
+        background-position: 80% 100%;
+        justify-content: start;
+        margin-top: 20px;
+
+        div {
+            width: 300px;
+
+            h1 {
+                font-size: 40px;
+                margin-bottom: 20px;
+                width: 300px;
+            }
+
+            p {
+                width: 299px;
+            }
+        }
+    }
+}
+
+.how_it_works {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    gap: 150px;
+    padding: 150px 0px;
+
+    .how_it_works_info1,
+    .how_it_works_info2 {
+        display: flex;
+        gap: 40px;
+        width: 1400px;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            justify-content: center;
+        }
+
+        h2 {
+            color: $active_nav;
+            font-size: 54px;
+            font-weight: 600;
+            line-height: 100%;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 150%;
+        }
+
+        img {
+            width: 800px;
+            height: 531px;
+            border-radius: 5px;
+        }
+    }
+
+    @include responsive(lg) {
+        width: 100%;
+        gap: 50px;
+        padding: 100px;
+
+        .how_it_works_info1,
+        .how_it_works_info2 {
+            flex-direction: column;
+            width: 660px;
+            gap: 30px;
+
+            div {
+                gap: 20px;
+
+                p {
+                    width: 560px;
+                }
+            }
+
+            img {
+                width: 660px;
+                height: 438px;
+            }
+        }
+
+        .how_it_works_info1 {
+            div {
+                order: 2;
+            }
+
+            img {
+                order: 1;
+            }
+        }
+
+        .how_it_works_info2 {
+            margin-left: auto;
+        }
+    }
+
+    @include responsive(md) {
+        padding: 100px 0px;
+
+        .how_it_works_info1,
+        .how_it_works_info2 {
+            width: 640px;
+
+            div {
+                padding: 0px 21px;
+
+                h2 {
+                    width: 523px;
+                }
+
+                p {
+                    width: 599px;
+                }
+            }
+
+            img {
+                width: 640px;
+                height: 438px;
+            }
+        }
+    }
+
+    @include responsive(sm) {
+        padding: 50px 0px;
+
+        .how_it_works_info1,
+        .how_it_works_info2 {
+            width: 320px;
+
+            div {
+                padding: 0px 10px;
+
+                h2 {
+                    font-size: 26px;
+                    width: 300px;
+                    font-weight: 500;
+                }
+
+                p {
+                    width: 300px;
+                }
+            }
+
+            img {
+                width: 320px;
+                height: 218px;
+            }
+        }
+    }
+}
+
+.quick_donate {
+    // border: 1px solid salmon; //delete
+    height: 221px;
+    background-color: $footer_bg;
+    display: flex;
+    justify-content: center;
+
+    .quick_donate_info {
+        width: 1400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+            font-size: 42px;
+            line-height: 100%;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: $footer_color;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: $footer_color;
+            font-size: 18px;
+            line-height: 150%;
+            width: 609px;
+        }
+
+        h4 {
+            color: $footer_color;
+            font-size: 26px;
+            line-height: 130%;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: transparent;
+            border: 1px solid $footer_color;
+            color: $footer_color;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            width: 320px;
+            font-size: 18px;
+
+            .btn_text {
+                width: 240px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .arrow {
+                background-color: $header_bg;
+                width: 80px;
+                height: 74px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: ease 0.3s;
+
+                img {
+                    width: 25px;
+                    height: 22px;
+                }
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    .arrow {
+                        background-color: $orange_btn_hover;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(lg) {
+        height: 313px;
+
+        .quick_donate_info {
+            padding: 0px 100px 0px 97px;
+
+            h3,
+            p {
+                width: 576px;
+            }
+        }
+    }
+
+    @include responsive(md) {
+        height: 459px;
+
+        .quick_donate_info {
+            flex-direction: column;
+            padding: 50px 20px;
+
+            div {
+                text-align: center;
+            }
+        }
+    }
+
+    @include responsive(sm) {
+        height: 446px;
+
+        .quick_donate_info {
+            padding: 30px 10px;
+
+            div {
+                text-align: center;
+
+                h3,
+                h4 {
+                    font-size: 26px;
+                    width: 300px;
+                }
+
+                p {
+                    width: 300px;
+                }
+            }
+
+            button {
+                width: 300px;
+                height: 45px;
+
+                .arrow {
+                    width: 59px;
+                    height: 43px;
+                }
+            }
+        }
+    }
+}
