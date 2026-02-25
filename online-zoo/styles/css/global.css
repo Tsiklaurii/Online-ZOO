@@ -594,4 +594,248 @@ footer .footer_soc_networks .soc_networks {
     gap: 30px;
     order: 1;
   }
+}
+
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.map h1 {
+  text-transform: uppercase;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 100%;
+  color: #20113D;
+  text-align: center;
+  width: 601px;
+  margin: 40px auto 70px;
+}
+.map div {
+  background-image: url("../../assets/icons/Map.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 912px;
+  margin-bottom: 150px;
+  position: relative;
+}
+.map div svg {
+  width: 100px;
+  height: 144px;
+}
+.map div svg g {
+  cursor: pointer;
+}
+.map div svg g .map_pin_bg {
+  fill: #F58021;
+  transition: ease 0.3s;
+}
+.map div svg g:hover .map_pin_bg {
+  fill: #FFFFFF;
+}
+@media (max-width: 1000px) {
+  .map div svg {
+    width: 42px;
+    height: 60px;
+  }
+}
+@media (max-width: 600px) {
+  .map div svg {
+    width: 35px;
+    height: 50px;
+  }
+}
+.map div .eagle {
+  position: absolute;
+  left: 21.9%;
+  top: 47.1%;
+}
+@media (max-width: 1400px) {
+  .map div .eagle {
+    left: 11.2%;
+    top: 45%;
+  }
+}
+@media (max-width: 600px) {
+  .map div .eagle {
+    left: 5%;
+    top: 42%;
+  }
+}
+.map div .alligator {
+  position: absolute;
+  left: 28.4%;
+  top: 47.1%;
+}
+@media (max-width: 1400px) {
+  .map div .alligator {
+    left: 20%;
+    top: 44%;
+  }
+}
+@media (max-width: 1000px) {
+  .map div .alligator {
+    left: 21%;
+    top: 47%;
+  }
+}
+@media (max-width: 600px) {
+  .map div .alligator {
+    left: 15.2%;
+    top: 42%;
+  }
+}
+.map div .lion {
+  position: absolute;
+  left: 43.2%;
+  top: 51.5%;
+}
+@media (max-width: 1400px) {
+  .map div .lion {
+    left: 40%;
+    top: 49%;
+  }
+}
+@media (max-width: 600px) {
+  .map div .lion {
+    left: 38%;
+    top: 47%;
+  }
+}
+.map div .gorilla {
+  position: absolute;
+  left: 49%;
+  top: 54%;
+}
+@media (max-width: 1400px) {
+  .map div .gorilla {
+    left: 48%;
+    top: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .map div .gorilla {
+    left: 47%;
+    top: 48%;
+  }
+}
+.map div .lemur {
+  position: absolute;
+  left: 54.6%;
+  top: 67%;
+}
+@media (max-width: 1400px) {
+  .map div .lemur {
+    left: 56%;
+    top: 66%;
+  }
+}
+@media (max-width: 1000px) {
+  .map div .lemur {
+    left: 56.5%;
+    top: 69%;
+  }
+}
+@media (max-width: 600px) {
+  .map div .lemur {
+    left: 56%;
+    top: 63%;
+  }
+}
+.map div .panda {
+  position: absolute;
+  left: 63%;
+  top: 42%;
+}
+@media (max-width: 1400px) {
+  .map div .panda {
+    left: 67%;
+    top: 40%;
+  }
+}
+@media (max-width: 600px) {
+  .map div .panda {
+    left: 69%;
+    top: 38%;
+  }
+}
+.map div .tiger {
+  position: absolute;
+  left: 66%;
+  top: 57%;
+}
+@media (max-width: 1400px) {
+  .map div .tiger {
+    left: 71%;
+    top: 57%;
+  }
+}
+@media (max-width: 1000px) {
+  .map div .tiger {
+    left: 72%;
+    top: 60%;
+  }
+}
+@media (max-width: 600px) {
+  .map div .tiger {
+    left: 73%;
+    top: 55%;
+  }
+}
+.map div .koala {
+  position: absolute;
+  left: 72%;
+  top: 70%;
+}
+@media (max-width: 1400px) {
+  .map div .koala {
+    left: 79%;
+    top: 68%;
+  }
+}
+@media (max-width: 1000px) {
+  .map div .koala {
+    left: 80%;
+    top: 71%;
+  }
+}
+@media (max-width: 600px) {
+  .map div .koala {
+    left: 83%;
+    top: 65%;
+  }
+}
+@media (max-width: 1400px) {
+  .map h1 {
+    margin: 30px auto 30px;
+  }
+  .map div {
+    height: 777px;
+    margin-bottom: 99px;
+  }
+}
+@media (max-width: 1000px) {
+  .map h1 {
+    margin: 30px auto 50px;
+    font-size: 42px;
+    font-weight: 500;
+  }
+  .map div {
+    height: 415px;
+    margin-bottom: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .map h1 {
+    margin: 20px auto 30px;
+    font-size: 26px;
+    width: 301px;
+  }
+  .map div {
+    height: 233.98px;
+    margin-bottom: 53px;
+    background-size: cover;
+  }
 }/*# sourceMappingURL=global.css.map */

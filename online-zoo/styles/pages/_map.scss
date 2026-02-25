@@ -1,0 +1,243 @@
+.map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 54px;
+        font-weight: 600;
+        line-height: 100%;
+        color: $footer_bg;
+        text-align: center;
+        width: 601px;
+        margin: 40px auto 70px;
+    }
+
+    div {
+        background-image: url('../../assets/icons/Map.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 912px;
+        margin-bottom: 150px;
+        position: relative;
+
+        svg {
+            width: 100px;
+            height: 144px;
+
+            g {
+                cursor: pointer;
+
+                .map_pin_bg {
+                    fill: #F58021;
+                    transition: ease 0.3s;
+                }
+
+                &:hover {
+                    .map_pin_bg {
+                        fill: $footer_color;
+                    }
+                }
+            }
+
+            @include responsive(md) {
+                width: 42px;
+                height: 60px;
+            }
+
+            @include responsive(sm) {
+                width: 35px;
+                height: 50px;
+            }
+        }
+
+        .eagle {
+            position: absolute;
+            left: 21.9%;
+            top: 47.1%;
+
+            @include responsive(lg) {
+                left: 11.2%;
+                top: 45%;
+            }
+
+            @include responsive(sm) {
+                left: 5%;
+                top: 42%;
+            }
+        }
+
+        .alligator {
+            position: absolute;
+            left: 28.4%;
+            top: 47.1%;
+
+            @include responsive(lg) {
+                left: 20%;
+                top: 44%;
+            }
+
+            @include responsive(md) {
+                left: 21%;
+                top: 47%;
+            }
+
+            @include responsive(sm) {
+                left: 15.2%;
+                top: 42%;
+            }
+        }
+
+        .lion {
+            position: absolute;
+            left: 43.2%;
+            top: 51.5%;
+
+            @include responsive(lg) {
+                left: 40%;
+                top: 49%;
+            }
+
+            @include responsive(sm) {
+                left: 38%;
+                top: 47%;
+            }
+        }
+
+        .gorilla {
+            position: absolute;
+            left: 49%;
+            top: 54%;
+
+            @include responsive(lg) {
+                left: 48%;
+                top: 50%;
+            }
+
+            @include responsive(sm) {
+                left: 47%;
+                top: 48%;
+            }
+        }
+
+        .lemur {
+            position: absolute;
+            left: 54.6%;
+            top: 67%;
+
+            @include responsive(lg) {
+                left: 56%;
+                top: 66%;
+            }
+
+            @include responsive(md) {
+                left: 56.5%;
+                top: 69%;
+            }
+
+            @include responsive(sm) {
+                left: 56%;
+                top: 63%;
+            }
+        }
+
+        .panda {
+            position: absolute;
+            left: 63%;
+            top: 42%;
+
+            @include responsive(lg) {
+                left: 67%;
+                top: 40%;
+            }
+
+            @include responsive(sm) {
+                left: 69%;
+                top: 38%;
+            }
+        }
+
+        .tiger {
+            position: absolute;
+            left: 66%;
+            top: 57%;
+
+            @include responsive(lg) {
+                left: 71%;
+                top: 57%;
+            }
+
+            @include responsive(md) {
+                left: 72%;
+                top: 60%;
+            }
+
+            @include responsive(sm) {
+                left: 73%;
+                top: 55%;
+            }
+        }
+
+        .koala {
+            position: absolute;
+            left: 72%;
+            top: 70%;
+
+            @include responsive(lg) {
+                left: 79%;
+                top: 68%;
+            }
+
+            @include responsive(md) {
+                left: 80%;
+                top: 71%;
+            }
+
+            @include responsive(sm) {
+                left: 83%;
+                top: 65%;
+            }
+        }
+    }
+
+    @include responsive(lg) {
+        h1 {
+            margin: 30px auto 30px;
+        }
+
+        div {
+            height: 777px;
+            margin-bottom: 99px;
+        }
+    }
+
+    @include responsive(md) {
+        h1 {
+            margin: 30px auto 50px;
+            font-size: 42px;
+            font-weight: 500;
+        }
+
+        div {
+            height: 415px;
+            margin-bottom: 100px;
+        }
+    }
+
+    @include responsive(sm) {
+        h1 {
+            margin: 20px auto 30px;
+            font-size: 26px;
+            width: 301px;
+        }
+
+        div {
+            height: 233.98px;
+            margin-bottom: 53px;
+            background-size: cover;
+        }
+    }
+}
