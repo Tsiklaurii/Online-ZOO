@@ -261,6 +261,7 @@ body {
     justify-content: center;
 
     .quick_donate_info {
+        border: 1px solid red;
         width: 1400px;
         display: flex;
         justify-content: space-between;
@@ -339,6 +340,7 @@ body {
         height: 313px;
 
         .quick_donate_info {
+            width: 100%;
             padding: 0px 100px 0px 97px;
 
             h3,

@@ -75,7 +75,6 @@ footer {
     @include responsive(lg) {
         .footer_nav {
             gap: 35px;
-            padding: 0px 40px;
 
             .footer_logos {
                 gap: 30px;

@@ -245,6 +245,7 @@ body {
   justify-content: center;
 }
 .quick_donate .quick_donate_info {
+  border: 1px solid red;
   width: 1400px;
   display: flex;
   justify-content: space-between;
@@ -313,6 +314,7 @@ body {
     height: 313px;
   }
   .quick_donate .quick_donate_info {
+    width: 100%;
     padding: 0px 100px 0px 97px;
   }
   .quick_donate .quick_donate_info h3,
@@ -518,7 +520,6 @@ footer .footer_soc_networks .soc_networks {
 @media (max-width: 1400px) {
   footer .footer_nav {
     gap: 35px;
-    padding: 0px 40px;
   }
   footer .footer_nav .footer_logos {
     gap: 30px;
@@ -837,5 +838,162 @@ footer .footer_soc_networks .soc_networks {
     height: 233.98px;
     margin-bottom: 53px;
     background-size: cover;
+  }
+}
+
+.contact_us {
+  display: flex;
+  flex-direction: column;
+}
+.contact_us img {
+  width: 1400px;
+  height: 815px;
+  margin: auto;
+}
+@media (max-width: 1400px) {
+  .contact_us img {
+    width: 100%;
+  }
+}
+@media (max-width: 1000px) {
+  .contact_us img {
+    height: 434px;
+  }
+}
+@media (max-width: 600px) {
+  .contact_us img {
+    height: 217px;
+  }
+}
+.contact_us .get_in_touch {
+  display: flex;
+  width: 1400px;
+  margin: auto;
+  justify-content: space-between;
+  padding: 150px 0px;
+}
+.contact_us .get_in_touch div {
+  width: 545px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.contact_us .get_in_touch div h1 {
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #00A092;
+}
+.contact_us .get_in_touch div p {
+  font-size: 18px;
+  line-height: 150%;
+}
+.contact_us .get_in_touch form {
+  width: 680px;
+}
+.contact_us .get_in_touch form label {
+  font-size: 18px;
+  line-height: 150%;
+}
+.contact_us .get_in_touch form label span {
+  color: #00A092;
+}
+.contact_us .get_in_touch form input {
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  margin: 10px 0px 30px;
+  padding: 17px 20px 16px;
+  font-size: 18px;
+  line-height: 150%;
+}
+.contact_us .get_in_touch form input:focus {
+  outline: none;
+}
+.contact_us .get_in_touch form textarea {
+  margin: 10px 0px 67px;
+  padding: 17px 20px 16px;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 200px;
+}
+.contact_us .get_in_touch form textarea:focus {
+  outline: none;
+}
+.contact_us .get_in_touch form button {
+  text-transform: uppercase;
+  border: none;
+  padding: 26px 110px;
+  border-radius: 5px;
+  background-color: #00A092;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+.contact_us .get_in_touch form button img {
+  width: 24px;
+  height: 22px;
+}
+@media (hover: hover) {
+  .contact_us .get_in_touch form button:hover {
+    background-color: #05786E;
+  }
+}
+@media (max-width: 1400px) {
+  .contact_us .get_in_touch {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0px 100px;
+  }
+  .contact_us .get_in_touch div {
+    width: 740px;
+    text-align: center;
+  }
+  .contact_us .get_in_touch form {
+    width: 740px;
+  }
+}
+@media (max-width: 1000px) {
+  .contact_us .get_in_touch {
+    width: 600px;
+  }
+  .contact_us .get_in_touch div,
+  .contact_us .get_in_touch form {
+    width: 600px;
+  }
+  .contact_us .get_in_touch div button,
+  .contact_us .get_in_touch form button {
+    margin: auto;
+    padding: 26px 80px;
+  }
+}
+@media (max-width: 600px) {
+  .contact_us .get_in_touch {
+    width: 300px;
+  }
+  .contact_us .get_in_touch div {
+    width: 300px;
+  }
+  .contact_us .get_in_touch div h1 {
+    font-size: 26px;
+  }
+  .contact_us .get_in_touch form {
+    width: 300px;
+  }
+  .contact_us .get_in_touch form input {
+    padding: 11px 10px 12px;
+  }
+  .contact_us .get_in_touch form button {
+    margin: auto;
+    padding: 14px 60px;
   }
 }/*# sourceMappingURL=global.css.map */
