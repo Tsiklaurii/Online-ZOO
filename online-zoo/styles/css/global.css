@@ -245,7 +245,6 @@ body {
   justify-content: center;
 }
 .quick_donate .quick_donate_info {
-  border: 1px solid red;
   width: 1400px;
   display: flex;
   justify-content: space-between;
@@ -452,6 +451,10 @@ header .networks img {
   }
 }
 
+body.no_scroll {
+  overflow: hidden;
+}
+
 footer {
   width: 100%;
   height: 329px;
@@ -500,6 +503,157 @@ footer .footer_nav button {
   footer .footer_nav button:hover {
     color: #20113D;
     background-color: #FFFFFF;
+  }
+}
+footer .footer_nav .donation_popup_1 {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  overflow-y: auto;
+}
+footer .footer_nav .donation_popup_1.active {
+  opacity: 1;
+  visibility: visible;
+}
+footer .footer_nav .donation_popup_1 .popup_content {
+  background: #FFFFFF;
+  border-radius: 5px;
+  width: 1160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+footer .footer_nav .donation_popup_1 .popup_content img {
+  width: 1160px;
+  height: 387px;
+  margin-bottom: 20px;
+}
+footer .footer_nav .donation_popup_1 .popup_content h2 {
+  font-size: 54px;
+  color: #F58021;
+  text-transform: uppercase;
+  width: 678px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+footer .footer_nav .donation_popup_1 .popup_content p {
+  font-size: 18px;
+  line-height: 150%;
+  width: 570px;
+  text-align: center;
+}
+footer .footer_nav .donation_popup_1 .popup_content div {
+  display: flex;
+  width: 1000px;
+  justify-content: space-between;
+  margin: 50px 0px;
+}
+footer .footer_nav .donation_popup_1 .popup_content div .btn {
+  background-color: #00A092;
+  padding: 26px 45px;
+}
+footer .footer_nav .donation_popup_1 .popup_content div .btn:hover {
+  background-color: #05786E;
+  color: #FFFFFF;
+}
+footer .footer_nav .donation_popup_1 .popup_content .close_popup {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  cursor: pointer;
+  right: 30px;
+  top: 30px;
+}
+@media (max-width: 1400px) {
+  footer .footer_nav .donation_popup_1 .popup_content {
+    width: 1121px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content img {
+    width: 1121px;
+    height: 312px;
+    margin-bottom: 30px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content h2 {
+    margin-bottom: 20px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content div {
+    margin: 30px 0px;
+  }
+}
+@media (max-width: 1000px) {
+  footer .footer_nav .donation_popup_1 .popup_content {
+    width: 600px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content img {
+    width: 600px;
+    height: 167px;
+    margin-bottom: 20px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content h2 {
+    font-size: 42px;
+    font-weight: 500;
+    width: 485px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content p {
+    width: 485px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content div {
+    width: 445px;
+    flex-wrap: wrap;
+    height: 170px;
+    align-content: space-between;
+    margin: 20px 0px 40px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content div .btn {
+    width: 135px;
+    height: 65px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content div .btn:last-child::after {
+    content: "Other";
+  }
+  footer .footer_nav .donation_popup_1 .popup_content div .btn:last-child {
+    color: transparent;
+    position: relative;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content div .btn:last-child::after {
+    color: #FFFFFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 600px) {
+  footer .footer_nav .donation_popup_1 .popup_content {
+    width: 320px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content img {
+    width: 320px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content h2 {
+    font-size: 18px;
+    width: 300px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content p {
+    width: 300px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content div {
+    width: 240px;
+    height: auto;
+    gap: 5px;
+  }
+  footer .footer_nav .donation_popup_1 .popup_content div .btn {
+    width: 115px;
+    height: 55px;
+    padding: 26px 43px;
   }
 }
 footer .footer_soc_networks {
