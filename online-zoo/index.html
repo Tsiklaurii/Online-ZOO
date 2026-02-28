@@ -82,10 +82,127 @@
                 </div>
                 <div>
                     <h4>Quick Donate</h4>
-                    <button>
+                    <button onclick="openDonationPopup2()">
                         <div class="btn_text">$ Donation Amount</div>
                         <div class="arrow"><img src="./assets/icons/Arrow.svg" alt="Arrow"></div>
                     </button>
+
+                    <div id="donationPopup2" class="donation_popup_2">
+                        <div class="popup_content">
+                            <!-- STEP 1 -->
+                            <div class="title">
+                                <h2>make your donation</h2>
+                            </div>
+                            <form class="form_step active" id="step1">
+                                <div class="form_info">
+                                    <p>Donation Information:</p>
+                                </div>
+                                <div class="inputs">
+                                    <label for="otherAmount"><span>* </span>Choose your donation amount:</label>
+                                    <div class="amount_buttons">
+                                        <button type="button" class="amount_btn" data-amount="10">$10</button>
+                                        <button type="button" class="amount_btn" data-amount="20">$20</button>
+                                        <button type="button" class="amount_btn" data-amount="30">$30</button>
+                                        <button type="button" class="amount_btn" data-amount="50">$50</button>
+                                        <button type="button" class="amount_btn" data-amount="80">$80</button>
+                                        <button type="button" class="amount_btn" data-amount="100">$100</button>
+                                    </div>
+                                    <div class="other_amount">
+                                        <div>Other Amount</div>
+                                        <input type="number" id="otherAmount">
+                                    </div>
+                                    <div class="special_pet">
+                                        <div>for special pet</div>
+                                        <select id="pets" name="pets" placeholder="Choose your favourite">
+                                            <option value="" disabled selected hidden>Choose your favourite</option>
+                                            <option value="volvo">Lukas the Panda</option>
+                                            <option value="saab">Andy the Lemur</option>
+                                            <option value="fiat">Glen the Gorilla</option>
+                                            <option value="audi">Mike the Alligator</option>
+                                            <option value="audi">Sarn & Lora the eagles family</option>
+                                            <option value="audi">Liz the Koala</option>
+                                            <option value="audi">Shake the Lion</option>
+                                            <option value="audi">Senja the Tiger</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <div class="monthly_gift">
+                                            <input class="monthly_gift_box" type="checkbox" id="monthly_gift"
+                                                name="monthly_gift" value="monthly_gift">
+                                            <label for="monthly_gift"> Make this a monthly recurring gift</label><br>
+                                        </div>
+                                        <button type="button" onclick="goToStep2()">Next <img
+                                                src="./assets/icons/Arrow.svg" alt="Arrow"></button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!-- STEP 2 -->
+                            <form class="form_step" id="step2">
+                                <div class="form_info">
+                                    <p>Billing Information:</p>
+                                </div>
+                                <div class="inputs">
+                                    <div class="billing_inputs">
+                                        <div>
+                                            <label for="fullName"><span>* </span>Your Name</label>
+                                            <input type="text" id="fullName" placeholder="First and last name" required>
+                                        </div>
+                                        <div>
+                                            <label for="email"><span>* </span>Your Email Address</label>
+                                            <input type="email" id="email" placeholder="Enter your email"
+                                                autocomplete="email" required>
+                                            <p>You will receive emails from the Online Zoo, including updates and news
+                                                on the latest discoveries and translations. You can unsubscribe at any
+                                                time.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="buttons">
+                                        <button class="back" type="button" onclick="goBackToStep1()">Back</button>
+                                        <button type="button" onclick="goToStep3()">Next <img
+                                                src="./assets/icons/Arrow.svg" alt="Arrow"></button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!-- STEP 3 -->
+                            <form class="form_step" id="step3">
+                                <div class="form_info">
+                                    <p>Payment Information:</p>
+                                </div>
+                                <div class="inputs">
+                                    <div class="payment_inputs">
+                                        <div class="card_info">
+                                            <div>
+                                                <label for="card"><span>* </span>Credit Card Number</label>
+                                                <input type="number" id="card" required>
+                                            </div>
+                                            <div>
+                                                <label for="cvv"><span>* </span>CVV Number</label>
+                                                <input type="number" id="cvv" required>
+                                            </div>
+                                        </div>
+                                        <div class="date">
+                                            <label for="month"><span>* </span>Expiration Date</label>
+                                            <div id="date">
+                                                <input type="number" id="month" placeholder="Month" min="1" max="12">
+                                                <input type="number" id="year" placeholder="Year" min="2024" max="2040">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="buttons">
+                                        <button class="back" type="button" onclick="goBackToStep2()">Back</button>
+                                        <button class="complete" type="button" onclick="completeDonation()">Complete
+                                            Donation</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
