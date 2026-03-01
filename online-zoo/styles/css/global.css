@@ -14,7 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 790px;
-  background-image: url("../assets/images/Background.png");
+  background-image: url("../../assets/images/Background.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -990,7 +990,7 @@ footer .footer_soc_networks .soc_networks {
   margin: 40px auto 70px;
 }
 .map div {
-  background-image: url("../assets/icons/Map.svg");
+  background-image: url("../../assets/icons/Map.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
