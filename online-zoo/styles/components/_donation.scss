@@ -38,6 +38,8 @@
             width: 100%;
             text-align: center;
             padding: 42px 0px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
 
             @include responsive(md) {
                 padding: 24px 0px;

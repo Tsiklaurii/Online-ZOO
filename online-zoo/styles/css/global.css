@@ -1193,6 +1193,8 @@ footer .footer_soc_networks .soc_networks {
   width: 100%;
   text-align: center;
   padding: 42px 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 @media (max-width: 1000px) {
   .donation_popup_2 .popup_content .title {
