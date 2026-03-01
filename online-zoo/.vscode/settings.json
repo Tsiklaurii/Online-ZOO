@@ -3,7 +3,8 @@
         {
             "format": "expanded",
             "extensionName": ".css",
-            "savePath": "/online-zoo/styles/css"
+            "savePath": "/online-zoo/styles"
+            // "savePath": "/online-zoo/styles/css"
         }
     ],
     "liveServer.settings.port": 5500
