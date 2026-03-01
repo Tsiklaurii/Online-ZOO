@@ -1866,7 +1866,7 @@ footer .footer_soc_networks .soc_networks {
 
 .side_panel {
   width: 220px;
-  position: fixed;
+  position: absolute;
 }
 .side_panel .expand1,
 .side_panel .expand2 {
