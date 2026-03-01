@@ -394,3 +394,228 @@ body {
         }
     }
 }
+
+.meet_pets {
+    padding: 136px 0px 150px;
+
+    @include responsive(md) {
+        padding: 100px 0px;
+    }
+
+    @include responsive(sm) {
+        padding: 50px 0px;
+    }
+
+    .meet_pets_info {
+        text-align: center;
+
+        h2 {
+            margin-bottom: 50px;
+            font-size: 54px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $active_nav;
+
+            @include responsive(sm) {
+                font-size: 26px;
+            }
+        }
+
+        .info {
+            font-size: 26px;
+            line-height: 130%;
+            width: 920px;
+            margin: 100px auto;
+
+            @include responsive(lg) {
+                width: 830px;
+                margin: 30px auto 100px;
+            }
+
+            @include responsive(md) {
+                width: 600px;
+                margin: 30px auto 50px;
+            }
+
+            @include responsive(sm) {
+                margin: 30px auto 30px;
+                width: 300px;
+                font-size: 18px;
+            }
+        }
+
+        .btns {
+            width: 185px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+
+            @include responsive(lg) {
+                width: 175px;
+            }
+
+            @include responsive(md) {
+                display: none;
+            }
+
+            button {
+                border-radius: 5px;
+                background: none;
+                width: 60px;
+                height: 60px;
+                border: 1px solid $footer_bg;
+                cursor: pointer;
+                transition: 0.3s ease;
+
+                @media (hover: hover) {
+                    &:hover {
+                        background-color: $footer_bg;
+                        fill: $footer_color;
+                        color: $footer_color;
+                    }
+                }
+            }
+        }
+    }
+
+    .pets_wrapper {
+        width: 100%;
+        padding: 50px 260px 100px 260px;
+        overflow: hidden;
+
+        @include responsive(lg) {
+            padding: 30px 40px 50px 40px;
+        }
+
+        @include responsive(sm) {
+            padding: 0px 10px;
+        }
+
+        .pets_container {
+            display: flex;
+            gap: 40px;
+            transition: transform 0.5s ease;
+
+            @include responsive(lg) {
+                gap: 20px;
+            }
+
+            .slide {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                flex: 0 0 auto;
+
+                @include responsive(md) {
+                    flex-direction: row;
+                }
+
+                div {
+                    background-color: $footer_bg;
+                    color: $footer_color;
+                    width: 440px;
+                    text-align: center;
+                    cursor: pointer;
+                    position: relative;
+                    border-radius: 5px;
+
+                    .name {
+                        position: absolute;
+                        width: auto;
+                        padding: 12.30px 19px;
+                        border-top-left-radius: 5px;
+                        font-size: 26px;
+                    }
+
+                    img {
+                        width: 440px;
+                        height: 436px;
+                        object-fit: cover;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                    }
+
+                    .card_info {
+                        padding: 30px 0px 74px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+                            padding: 0px 45px;
+
+                            h3 {
+                                font-size: 26px;
+                                line-height: 130%;
+                                font-weight: 500;
+                            }
+
+                            p {
+                                font-size: 18px;
+                                margin-bottom: 0;
+                                height: 78px;
+                            }
+                        }
+
+                        button {
+                            background: none;
+                            border: none;
+                            color: $header_bg;
+                            display: flex;
+                            align-items: center;
+                            gap: 11.26px;
+                            text-transform: uppercase;
+                            font-size: 20.27px;
+                            font-weight: 600;
+                            margin: auto;
+                            cursor: pointer;
+
+                            @media (hover: hover) {
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+
+                            img {
+                                width: 24px;
+                                height: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .favorite_btn {
+        margin: auto;
+        border: 1px solid $footer_bg;
+        background: none;
+        border-radius: 5px;
+        color: $footer_bg;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 26px 35px;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: $footer_bg;
+                color: $footer_color;
+                fill: $footer_color;
+            }
+        }
+
+        @include responsive(sm) {
+            display: none;
+        }
+    }
+}

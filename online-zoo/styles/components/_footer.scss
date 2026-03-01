@@ -116,9 +116,11 @@ footer {
                         background-color: $active_nav;
                         padding: 26px 45px;
 
-                        &:hover {
-                            background-color: $turquoise-btn_hover;
-                            color: $footer_color;
+                        @media (hover: hover) {
+                            &:hover {
+                                background-color: $turquoise_btn_hover;
+                                color: $footer_color;
+                            }
                         }
                     }
                 }
