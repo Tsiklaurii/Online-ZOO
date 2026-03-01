@@ -146,6 +146,10 @@
                         padding: 21.5px 22px;
                         background-color: rgba($active_nav, 0.5);
                         transition: ease 0.3s;
+                        border: none;
+                        border-radius: 5px;
+                        color: $footer_color;
+                        font-size: 18px;
 
                         @include responsive(md) {
                             width: 130px;
@@ -294,6 +298,10 @@
                     justify-content: center;
                     gap: 10px;
                     transition: ease 0.3s;
+                    border: none;
+                    border-radius: 5px;
+                    color: $footer_color;
+                    font-size: 18px;
 
                     img {
                         width: 24px;

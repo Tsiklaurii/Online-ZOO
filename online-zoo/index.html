@@ -18,7 +18,7 @@
                     <ul class="nav">
                         <li><a href="index.html" class="active">About</a></li>
                         <li><a href="./pages/map.html">Map</a></li>
-                        <li><a href="#zoos">Zoos</a></li>
+                        <li><a href="./pages/zoos_page_panda.html">Zoos</a></li>
                         <li><a href="./pages/contact_us.html">Contact us</a></li>
                         <li><a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=21-4877&t=DSve9ApAfrSFVRN4-0"
                                 target="_blank">Design</a>
@@ -86,120 +86,6 @@
                         <div class="btn_text">$ Donation Amount</div>
                         <div class="arrow"><img src="./assets/icons/Arrow.svg" alt="Arrow"></div>
                     </button>
-
-                    <div id="donationPopup2" class="donation_popup_2">
-                        <div class="popup_content">
-                            <div class="title">
-                                <h2>make your donation</h2>
-                            </div>
-                            <form class="form_step active" id="step1">
-                                <div class="form_info">
-                                    <p>Donation Information:</p>
-                                </div>
-                                <div class="inputs">
-                                    <label for="otherAmount"><span>* </span>Choose your donation amount:</label>
-                                    <div class="amount_buttons">
-                                        <button type="button" class="amount_btn" data-amount="10">$10</button>
-                                        <button type="button" class="amount_btn" data-amount="20">$20</button>
-                                        <button type="button" class="amount_btn" data-amount="30">$30</button>
-                                        <button type="button" class="amount_btn" data-amount="50">$50</button>
-                                        <button type="button" class="amount_btn" data-amount="80">$80</button>
-                                        <button type="button" class="amount_btn" data-amount="100">$100</button>
-                                    </div>
-                                    <div class="other_amount">
-                                        <div>Other Amount</div>
-                                        <input type="number" id="otherAmount">
-                                    </div>
-                                    <div class="special_pet">
-                                        <div>for special pet</div>
-                                        <select id="pets" name="pets" placeholder="Choose your favourite">
-                                            <option value="" disabled selected hidden>Choose your favourite</option>
-                                            <option value="volvo">Lukas the Panda</option>
-                                            <option value="saab">Andy the Lemur</option>
-                                            <option value="fiat">Glen the Gorilla</option>
-                                            <option value="audi">Mike the Alligator</option>
-                                            <option value="audi">Sarn & Lora the eagles family</option>
-                                            <option value="audi">Liz the Koala</option>
-                                            <option value="audi">Shake the Lion</option>
-                                            <option value="audi">Senja the Tiger</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <div class="monthly_gift">
-                                            <input class="monthly_gift_box" type="checkbox" id="monthly_gift"
-                                                name="monthly_gift" value="monthly_gift">
-                                            <label for="monthly_gift"> Make this a monthly recurring gift</label><br>
-                                        </div>
-                                        <button type="button" onclick="goToStep2()">Next <img
-                                                src="./assets/icons/Arrow.svg" alt="Arrow"></button>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form_step" id="step2">
-                                <div class="form_info">
-                                    <p>Billing Information:</p>
-                                </div>
-                                <div class="inputs">
-                                    <div class="billing_inputs">
-                                        <div>
-                                            <label for="fullName"><span>* </span>Your Name</label>
-                                            <input type="text" id="fullName" placeholder="First and last name" required>
-                                        </div>
-                                        <div>
-                                            <label for="email"><span>* </span>Your Email Address</label>
-                                            <input type="email" id="email" placeholder="Enter your email"
-                                                autocomplete="email" required>
-                                            <p>You will receive emails from the Online Zoo, including updates and news
-                                                on the latest discoveries and translations. You can unsubscribe at any
-                                                time.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="buttons">
-                                        <button class="back" type="button" onclick="goBackToStep1()">Back</button>
-                                        <button type="button" onclick="goToStep3()">Next <img
-                                                src="./assets/icons/Arrow.svg" alt="Arrow"></button>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form_step" id="step3">
-                                <div class="form_info">
-                                    <p>Payment Information:</p>
-                                </div>
-                                <div class="inputs">
-                                    <div class="payment_inputs">
-                                        <div class="card_info">
-                                            <div>
-                                                <label for="card"><span>* </span>Credit Card Number</label>
-                                                <input type="number" id="card" required>
-                                            </div>
-                                            <div>
-                                                <label for="cvv"><span>* </span>CVV Number</label>
-                                                <input type="number" id="cvv" required>
-                                            </div>
-                                        </div>
-                                        <div class="date">
-                                            <label for="month"><span>* </span>Expiration Date</label>
-                                            <div id="date">
-                                                <input type="number" id="month" placeholder="Month" min="1" max="12">
-                                                <input type="number" id="year" placeholder="Year" min="2024" max="2040">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="buttons">
-                                        <button class="back" type="button" onclick="goBackToStep2()">Back</button>
-                                        <button class="complete" type="button" onclick="completeDonation()">Complete
-                                            Donation</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -231,236 +117,392 @@
             <div class="pets_wrapper">
                 <div class="pets_container">
                     <div class="slide">
-                        <div class="panda">
-                            <div class="name">Lucas</div>
-                            <img src="./assets/images/Panda.png" alt="Panda">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Giant Panda</h3>
-                                    <p>Native to central China, giant pandas have come to symbolize vulnerable species.
-                                    </p>
+                        <a href="./pages/zoos_page_panda.html">
+                            <div class="panda">
+                                <div class="name">Lucas</div>
+                                <img src="./assets/images/Panda.png" alt="Panda">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Giant Panda</h3>
+                                        <p>Native to central China, giant pandas have come to symbolize vulnerable
+                                            species.
+                                        </p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
-                        <div class="eagles">
-                            <div class="name">Sam & Lora</div>
-                            <img src="./assets/images/Eagles.png" alt="Eagles">
-                            <div class="card_info">
-                                <div>
-                                    <h3>West End Bald Eagles</h3>
-                                    <p>Pair of eagle parents lay and protect eggs, feed their chicks and teach them to
-                                        hunt and fly.</p>
+                        </a>
+                        <a href="./pages/zoos_page_eagles.html">
+                            <div class="eagles">
+                                <div class="name">Sam & Lora</div>
+                                <img src="./assets/images/Eagles.png" alt="Eagles">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>West End Bald Eagles</h3>
+                                        <p>Pair of eagle parents lay and protect eggs, feed their chicks and teach them
+                                            to
+                                            hunt and fly.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="slide">
-                        <div class="lemur">
-                            <div class="name">Andy</div>
-                            <img src="./assets/images/Lemur.png" alt="Lemur">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Madagascarian Lemur </h3>
-                                    <p>Lemurs are considered the world’s most endangered group of mammals.</p>
+                        <a href="./pages/zoos_page_lemurs.html">
+                            <div class="lemur">
+                                <div class="name">Andy</div>
+                                <img src="./assets/images/Lemur.png" alt="Lemur">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Madagascarian Lemur </h3>
+                                        <p>Lemurs are considered the world’s most endangered group of mammals.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
-                        <div class="koala">
-                            <div class="name">Liz</div>
-                            <img src="./assets/images/Koala.png" alt="Koala">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Australian Koala</h3>
-                                    <p>The elevated walkways bring you to eye level with the koalas as they perch in
-                                        their forest.</p>
+                        </a>
+                        <a href="./pages/zoos_page_panda.html">
+                            <div class="koala">
+                                <div class="name">Liz</div>
+                                <img src="./assets/images/Koala.png" alt="Koala">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Australian Koala</h3>
+                                        <p>The elevated walkways bring you to eye level with the koalas as they perch in
+                                            their forest.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="slide">
-                        <div class="gorilla">
-                            <div class="name">Glen</div>
-                            <img src="./assets/images/Gorilla.png" alt="Gorilla">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Gorilla in Congo</h3>
-                                    <p>Variety of snacks very important for the healthy life of gorillas and his plenty
-                                        of babies.</p>
+                        <a href="./pages/zoos_page_gorillas.html">
+                            <div class="gorilla">
+                                <div class="name">Glen</div>
+                                <img src="./assets/images/Gorilla.png" alt="Gorilla">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Gorilla in Congo</h3>
+                                        <p>Variety of snacks very important for the healthy life of gorillas and his
+                                            plenty
+                                            of babies.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
-                        <div class="lion">
-                            <div class="name">Shake</div>
-                            <img src="./assets/images/Lion.png" alt="Lion">
-                            <div class="card_info">
-                                <div>
-                                    <h3>African Lion</h3>
-                                    <p>Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the
-                                        pride.</p>
+                        </a>
+                        <a href="./pages/zoos_page_panda.html">
+                            <div class="lion">
+                                <div class="name">Shake</div>
+                                <img src="./assets/images/Lion.png" alt="Lion">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>African Lion</h3>
+                                        <p>Lions roam the savannas and grasslands of Africa, hunting and raising cubs in
+                                            the
+                                            pride.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="slide">
-                        <div class="alligator">
-                            <div class="name">Mike</div>
-                            <img src="./assets/images/Alligator.png" alt="Alligator">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Chinese Alligator</h3>
-                                    <p>From nose to tail, belly to back, hard scales protect this petite alligator.</p>
+                        <a href="./pages/zoos_page_panda.html">
+                            <div class="alligator">
+                                <div class="name">Mike</div>
+                                <img src="./assets/images/Alligator.png" alt="Alligator">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Chinese Alligator</h3>
+                                        <p>From nose to tail, belly to back, hard scales protect this petite alligator.
+                                        </p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
-                        <div class="Tiger">
-                            <div class="name">Senja</div>
-                            <img src="./assets/images/Tiger.png" alt="Tiger">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Sumatran Tiger</h3>
-                                    <p>Sumatran Tigers are the smallest of the five sub-species, and are found in
-                                        Indonesia.</p>
+                        </a>
+                        <a href="./pages/zoos_page_panda.html">
+                            <div class="Tiger">
+                                <div class="name">Senja</div>
+                                <img src="./assets/images/Tiger.png" alt="Tiger">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Sumatran Tiger</h3>
+                                        <p>Sumatran Tigers are the smallest of the five sub-species, and are found in
+                                            Indonesia.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="slide">
-                        <div class="panda">
-                            <div class="name">Lucas</div>
-                            <img src="./assets/images/Panda.png" alt="Panda">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Giant Panda</h3>
-                                    <p>Native to central China, giant pandas have come to symbolize vulnerable species.
-                                    </p>
+                        <a href="./pages/zoos_page_panda.html">
+                            <div class="panda">
+                                <div class="name">Lucas</div>
+                                <img src="./assets/images/Panda.png" alt="Panda">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Giant Panda</h3>
+                                        <p>Native to central China, giant pandas have come to symbolize vulnerable
+                                            species.
+                                        </p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
-                        <div class="eagles">
-                            <div class="name">Sam & Lora</div>
-                            <img src="./assets/images/Eagles.png" alt="Eagles">
-                            <div class="card_info">
-                                <div>
-                                    <h3>West End Bald Eagles</h3>
-                                    <p>Pair of eagle parents lay and protect eggs, feed their chicks and teach them to
-                                        hunt and fly.</p>
+                        </a>
+                        <a href="./pages/zoos_page_eagles.html">
+                            <div class="eagles">
+                                <div class="name">Sam & Lora</div>
+                                <img src="./assets/images/Eagles.png" alt="Eagles">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>West End Bald Eagles</h3>
+                                        <p>Pair of eagle parents lay and protect eggs, feed their chicks and teach them
+                                            to
+                                            hunt and fly.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="slide">
-                        <div class="lemur">
-                            <div class="name">Andy</div>
-                            <img src="./assets/images/Lemur.png" alt="Lemur">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Madagascarian Lemur </h3>
-                                    <p>Lemurs are considered the world’s most endangered group of mammals.</p>
+                        <a href="./pages/zoos_page_lemurs.html">
+                            <div class="lemur">
+                                <div class="name">Andy</div>
+                                <img src="./assets/images/Lemur.png" alt="Lemur">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Madagascarian Lemur </h3>
+                                        <p>Lemurs are considered the world’s most endangered group of mammals.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
-                        <div class="koala">
-                            <div class="name">Liz</div>
-                            <img src="./assets/images/Koala.png" alt="Koala">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Australian Koala</h3>
-                                    <p>The elevated walkways bring you to eye level with the koalas as they perch in
-                                        their forest.</p>
+                        </a>
+                        <a href="./pages/zoos_page_panda.html">
+                            <div class="koala">
+                                <div class="name">Liz</div>
+                                <img src="./assets/images/Koala.png" alt="Koala">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Australian Koala</h3>
+                                        <p>The elevated walkways bring you to eye level with the koalas as they perch in
+                                            their forest.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="slide">
-                        <div class="gorilla">
-                            <div class="name">Glen</div>
-                            <img src="./assets/images/Gorilla.png" alt="Gorilla">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Gorilla in Congo</h3>
-                                    <p>Variety of snacks very important for the healthy life of gorillas and his plenty
-                                        of babies.</p>
+                        <a href="./pages/zoos_page_gorillas.html">
+                            <div class="gorilla">
+                                <div class="name">Glen</div>
+                                <img src="./assets/images/Gorilla.png" alt="Gorilla">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Gorilla in Congo</h3>
+                                        <p>Variety of snacks very important for the healthy life of gorillas and his
+                                            plenty
+                                            of babies.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
-                        <div class="lion">
-                            <div class="name">Shake</div>
-                            <img src="./assets/images/Lion.png" alt="Lion">
-                            <div class="card_info">
-                                <div>
-                                    <h3>African Lion</h3>
-                                    <p>Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the
-                                        pride.</p>
+                        </a>
+                        <a href="./pages/zoos_page_panda.html">
+                            <div class="lion">
+                                <div class="name">Shake</div>
+                                <img src="./assets/images/Lion.png" alt="Lion">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>African Lion</h3>
+                                        <p>Lions roam the savannas and grasslands of Africa, hunting and raising cubs in
+                                            the
+                                            pride.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="slide">
-                        <div class="alligator">
-                            <div class="name">Mike</div>
-                            <img src="./assets/images/Alligator.png" alt="Alligator">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Chinese Alligator</h3>
-                                    <p>From nose to tail, belly to back, hard scales protect this petite alligator.</p>
+                        <a href="./pages/zoos_page_panda.html">
+                            <div class="alligator">
+                                <div class="name">Mike</div>
+                                <img src="./assets/images/Alligator.png" alt="Alligator">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Chinese Alligator</h3>
+                                        <p>From nose to tail, belly to back, hard scales protect this petite alligator.
+                                        </p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
-                        <div class="Tiger">
-                            <div class="name">Senja</div>
-                            <img src="./assets/images/Tiger.png" alt="Tiger">
-                            <div class="card_info">
-                                <div>
-                                    <h3>Sumatran Tiger</h3>
-                                    <p>Sumatran Tigers are the smallest of the five sub-species, and are found in
-                                        Indonesia.</p>
+                        </a>
+                        <a href="./pages/zoos_page_panda.html">
+                            <div class="Tiger">
+                                <div class="name">Senja</div>
+                                <img src="./assets/images/Tiger.png" alt="Tiger">
+                                <div class="card_info">
+                                    <div>
+                                        <h3>Sumatran Tiger</h3>
+                                        <p>Sumatran Tigers are the smallest of the five sub-species, and are found in
+                                            Indonesia.</p>
+                                    </div>
+                                    <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
+                                            alt="View Live Cam Arrow"></button>
                                 </div>
-                                <button>View Live Cam <img src="./assets/icons/View_live_cam_arrow.svg"
-                                        alt="View Live Cam Arrow"></button>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
-            <button class="favorite_btn">choose your favourite
-                <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
-                        d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
-                        fill="#20113D" />
-                </svg>
-            </button>
+            <a href="./pages/zoos_page_panda.html">
+                <button class="favorite_btn">choose your favourite
+                    <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                            fill="#20113D" />
+                    </svg>
+                </button>
+            </a>
         </section>
     </main>
+
+    <div id="donationPopup2" class="donation_popup_2">
+        <div class="popup_content">
+            <div class="title">
+                <h2>make your donation</h2>
+            </div>
+            <form class="form_step active" id="step1">
+                <div class="form_info">
+                    <p>Donation Information:</p>
+                </div>
+                <div class="inputs">
+                    <label for="otherAmount"><span>* </span>Choose your donation amount:</label>
+                    <div class="amount_buttons">
+                        <button type="button" class="amount_btn" data-amount="10">$10</button>
+                        <button type="button" class="amount_btn" data-amount="20">$20</button>
+                        <button type="button" class="amount_btn" data-amount="30">$30</button>
+                        <button type="button" class="amount_btn" data-amount="50">$50</button>
+                        <button type="button" class="amount_btn" data-amount="80">$80</button>
+                        <button type="button" class="amount_btn" data-amount="100">$100</button>
+                    </div>
+                    <div class="other_amount">
+                        <div>Other Amount</div>
+                        <input type="number" id="otherAmount">
+                    </div>
+                    <div class="special_pet">
+                        <div>for special pet</div>
+                        <select id="pets" name="pets" placeholder="Choose your favourite">
+                            <option value="" disabled selected hidden>Choose your favourite</option>
+                            <option value="volvo">Lukas the Panda</option>
+                            <option value="saab">Andy the Lemur</option>
+                            <option value="fiat">Glen the Gorilla</option>
+                            <option value="audi">Mike the Alligator</option>
+                            <option value="audi">Sarn & Lora the eagles family</option>
+                            <option value="audi">Liz the Koala</option>
+                            <option value="audi">Shake the Lion</option>
+                            <option value="audi">Senja the Tiger</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="monthly_gift">
+                            <input class="monthly_gift_box" type="checkbox" id="monthly_gift" name="monthly_gift"
+                                value="monthly_gift">
+                            <label for="monthly_gift"> Make this a monthly recurring gift</label><br>
+                        </div>
+                        <button type="button" onclick="goToStep2()">Next<img src="./assets/icons/Arrow.svg"
+                                alt="Arrow"></button>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form_step" id="step2">
+                <div class="form_info">
+                    <p>Billing Information:</p>
+                </div>
+                <div class="inputs">
+                    <div class="billing_inputs">
+                        <div>
+                            <label for="fullName"><span>* </span>Your Name</label>
+                            <input type="text" id="fullName" placeholder="First and last name" required>
+                        </div>
+                        <div>
+                            <label for="email"><span>* </span>Your Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" autocomplete="email" required>
+                            <p>You will receive emails from the Online Zoo, including updates and news
+                                on the latest discoveries and translations. You can unsubscribe at any
+                                time.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <button class="back" type="button" onclick="goBackToStep1()">Back</button>
+                        <button type="button" onclick="goToStep3()">Next <img src="./assets/icons/Arrow.svg"
+                                alt="Arrow"></button>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form_step" id="step3">
+                <div class="form_info">
+                    <p>Payment Information:</p>
+                </div>
+                <div class="inputs">
+                    <div class="payment_inputs">
+                        <div class="card_info">
+                            <div>
+                                <label for="card"><span>* </span>Credit Card Number</label>
+                                <input type="number" id="card" required>
+                            </div>
+                            <div>
+                                <label for="cvv"><span>* </span>CVV Number</label>
+                                <input type="number" id="cvv" required>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <label for="month"><span>* </span>Expiration Date</label>
+                            <div id="date">
+                                <input type="number" id="month" placeholder="Month" min="1" max="12">
+                                <input type="number" id="year" placeholder="Year" min="2024" max="2040">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <button class="back" type="button" onclick="goBackToStep2()">Back</button>
+                        <button class="complete" type="button" onclick="completeDonation()">Complete
+                            Donation</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
@@ -476,7 +518,7 @@
                     <ul class="nav">
                         <li><a href="index.html">About</a></li>
                         <li><a href="./pages/map.html">Map</a></li>
-                        <li><a href="#zoos">Zoos</a></li>
+                        <li><a href="./pages/zoos_page_panda.html">Zoos</a></li>
                         <li><a href="./pages/contact_us.html">Contact us</a></li>
                     </ul>
                 </nav>

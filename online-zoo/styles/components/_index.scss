@@ -590,32 +590,36 @@ body {
         }
     }
 
-    .favorite_btn {
-        margin: auto;
-        border: 1px solid $footer_bg;
-        background: none;
-        border-radius: 5px;
-        color: $footer_bg;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-transform: uppercase;
-        font-size: 18px;
-        font-weight: 600;
-        padding: 26px 35px;
-        cursor: pointer;
-        transition: 0.3s ease;
+    a {
+        text-decoration: none;
 
-        @media (hover: hover) {
-            &:hover {
-                background-color: $footer_bg;
-                color: $footer_color;
-                fill: $footer_color;
+        .favorite_btn {
+            margin: auto;
+            border: 1px solid $footer_bg;
+            background: none;
+            border-radius: 5px;
+            color: $footer_bg;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 26px 35px;
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            @media (hover: hover) {
+                &:hover {
+                    background-color: $footer_bg;
+                    color: $footer_color;
+                    fill: $footer_color;
+                }
             }
-        }
 
-        @include responsive(sm) {
-            display: none;
+            @include responsive(sm) {
+                display: none;
+            }
         }
     }
 }

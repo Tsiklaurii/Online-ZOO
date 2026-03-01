@@ -550,7 +550,10 @@ body {
   width: 24px;
   height: 22px;
 }
-.meet_pets .favorite_btn {
+.meet_pets a {
+  text-decoration: none;
+}
+.meet_pets a .favorite_btn {
   margin: auto;
   border: 1px solid #20113D;
   background: none;
@@ -567,14 +570,14 @@ body {
   transition: 0.3s ease;
 }
 @media (hover: hover) {
-  .meet_pets .favorite_btn:hover {
+  .meet_pets a .favorite_btn:hover {
     background-color: #20113D;
     color: #FFFFFF;
     fill: #FFFFFF;
   }
 }
 @media (max-width: 600px) {
-  .meet_pets .favorite_btn {
+  .meet_pets a .favorite_btn {
     display: none;
   }
 }
@@ -1527,6 +1530,10 @@ footer .footer_soc_networks .soc_networks {
   padding: 21.5px 22px;
   background-color: rgba(0, 160, 146, 0.5);
   transition: ease 0.3s;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-size: 18px;
 }
 @media (max-width: 1000px) {
   .donation_popup_2 .popup_content .form_step .inputs .amount_buttons .amount_btn {
@@ -1672,6 +1679,10 @@ footer .footer_soc_networks .soc_networks {
   justify-content: center;
   gap: 10px;
   transition: ease 0.3s;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-size: 18px;
 }
 .donation_popup_2 .popup_content .form_step .inputs button img {
   width: 24px;
@@ -1851,4 +1862,158 @@ footer .footer_soc_networks .soc_networks {
 .donation_popup_2 .popup_content .form_step.active {
   display: flex;
   flex-direction: column;
+}
+
+.side_panel {
+  width: 220px;
+  position: fixed;
+}
+.side_panel .expand1,
+.side_panel .expand2 {
+  height: 80px;
+}
+.side_panel .expand1 {
+  position: relative;
+  color: #FFFFFF;
+}
+.side_panel .expand1 div {
+  width: 120px;
+  height: auto;
+  background-color: #F58021;
+  border-bottom: none;
+  padding: 8px 24px;
+  border-bottom-right-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 10px;
+  text-transform: uppercase;
+}
+.side_panel .expand1 .expand_arrows {
+  position: absolute;
+  top: 40%;
+  right: 30px;
+}
+.side_panel div {
+  height: 171px;
+  background-color: #20113D;
+  border-bottom: 1px solid #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.side_panel div .circle {
+  background-color: #F58021;
+  border-bottom: none;
+  border-radius: 50%;
+  width: 104px;
+  height: 104px;
+  transition: 0.3s ease;
+}
+@media (hover: hover) {
+  .side_panel div:hover .circle {
+    background-color: #FFFFFF;
+  }
+}
+
+.live_cams {
+  width: 1400px;
+  margin: auto;
+  text-align: center;
+}
+.live_cams h1 {
+  font-size: 54px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #00A092;
+  padding: 54px 0px 50px;
+}
+.live_cams a img {
+  width: 1400px;
+  height: 787px;
+}
+.live_cams .more_cams {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0px 150px;
+}
+.live_cams .more_cams h2 {
+  font-size: 42px;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+}
+.live_cams .more_cams .more_cams_carousel {
+  display: flex;
+  margin: auto;
+  gap: 40px;
+  align-items: center;
+}
+.live_cams .more_cams .more_cams_carousel img {
+  cursor: pointer;
+  width: 24px;
+  height: 22px;
+}
+.live_cams .more_cams .more_cams_carousel .more_cams_imgs {
+  display: flex;
+  gap: 40px;
+}
+.live_cams .more_cams .more_cams_carousel .more_cams_imgs img {
+  width: 320px;
+  height: 209px;
+  gap: 40px;
+}
+
+.information {
+  padding: 150px 0px;
+}
+.information .did_you_know {
+  margin: auto;
+  width: 1040px;
+  padding: 46px 60px 50px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.information .did_you_know h2 {
+  font-size: 42px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #00A092;
+}
+.information .did_you_know p {
+  font-size: 26px;
+  line-height: 130%;
+}
+.information .animal_info {
+  display: flex;
+  justify-content: space-between;
+  padding: 147px 0px 50px;
+  width: 1159px;
+  margin: auto;
+}
+.information .animal_info .list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.information .animal_info .list span {
+  font-size: 26px;
+  line-height: 130%;
+}
+.information .animal_info img {
+  width: 440px;
+  height: 440px;
+}
+.information h4 {
+  font-size: 18px;
+  line-height: 150%;
+  font-weight: 400;
+  width: 1160px;
+  margin: auto;
+  margin-bottom: 150px;
 }/*# sourceMappingURL=global.css.map */
