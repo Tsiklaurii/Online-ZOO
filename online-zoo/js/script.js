@@ -102,30 +102,3 @@ function closePopup() {
         input.value = "";
     });
 }
-
-
-// slider
-const container = document.querySelector('.pets_container');
-const slides = document.querySelectorAll('.slide');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-let currentIndex = 0;
-const slideWidth = slides[0].offsetWidth + 40;
-
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < slides.length - 1) {
-        currentIndex++;
-        updateSlider();
-    }
-});
-
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateSlider();
-    }
-});
-
-function updateSlider() {
-    container.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-}

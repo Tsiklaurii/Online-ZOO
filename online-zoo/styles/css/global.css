@@ -427,7 +427,7 @@ body {
 }
 @media (max-width: 1000px) {
   .meet_pets .meet_pets_info .btns {
-    display: none;
+    padding-bottom: 20px;
   }
 }
 .meet_pets .meet_pets_info .btns button {
@@ -450,6 +450,19 @@ body {
   width: 100%;
   padding: 50px 260px 100px 260px;
   overflow: hidden;
+}
+.meet_pets .pets_wrapper .loader {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.meet_pets .pets_wrapper .fetch_error {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  color: red;
+  font-weight: 700;
 }
 @media (max-width: 1400px) {
   .meet_pets .pets_wrapper {

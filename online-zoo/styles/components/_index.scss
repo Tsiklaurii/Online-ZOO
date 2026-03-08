@@ -455,7 +455,8 @@ body {
             }
 
             @include responsive(md) {
-                display: none;
+                // display: none;
+                padding-bottom: 20px;
             }
 
             button {
@@ -482,6 +483,21 @@ body {
         width: 100%;
         padding: 50px 260px 100px 260px;
         overflow: hidden;
+
+        .loader {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .fetch_error {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 30px;
+            color: red;
+            font-weight: 700;
+        }
 
         @include responsive(lg) {
             padding: 30px 40px 50px 40px;
