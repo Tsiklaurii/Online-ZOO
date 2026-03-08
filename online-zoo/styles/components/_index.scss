@@ -490,7 +490,7 @@ body {
             padding: 10px;
         }
 
-        .fetch_error {
+        .pets_error {
             display: flex;
             justify-content: center;
             text-align: center;
@@ -635,6 +635,214 @@ body {
 
             @include responsive(sm) {
                 display: none;
+            }
+        }
+    }
+}
+
+.feedback {
+    width: 100%;
+    height: 1776px;
+    background-image: url('../../assets/images/Feedback_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0px 150px 260px;
+
+    @include responsive(lg) {
+        height: 1880px;
+        padding: 100px 0px 150px 140px;
+    }
+
+    @include responsive(md) {
+        padding: 100px 0px 750px 20px;
+    }
+
+    @include responsive(sm) {
+        padding: 100px 0px 750px 10px;
+    }
+
+    .feedback_info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 402px;
+
+        @include responsive(lg) {
+            flex-direction: column;
+            gap: 50px;
+            margin-bottom: 97px;
+        }
+
+        .feedback_title {
+            color: $footer_color;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            width: 560px;
+
+            @include responsive(sm) {
+                width: 300px;
+            }
+
+            h2 {
+                font-size: 54px;
+                font-weight: 600;
+                line-height: 100%;
+                text-transform: uppercase;
+                width: 440px;
+
+                @include responsive(sm) {
+                    width: 300px;
+                    font-size: 26px;
+                    font-weight: 500;
+                    text-align: center;
+                }
+            }
+
+            p {
+                font-size: 26px;
+                line-height: 130%;
+                font-weight: 500;
+
+                @include responsive(sm) {
+                    width: 300px;
+                    font-size: 18px;
+                    font-weight: 400;
+                    text-align: center;
+                }
+            }
+        }
+
+        .feedback_wrapper {
+            width: 1060px;
+            overflow: hidden;
+
+            @include responsive(md) {
+                width: 100%;
+            }
+
+            .feedback_fetch_error {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                font-size: 30px;
+                color: red;
+                font-weight: 700;
+            }
+
+            .feedback_container {
+                display: flex;
+                gap: 30px;
+                transition: transform 0.5s ease;
+
+                .slide {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+
+                    @include responsive(md) {
+                        flex-direction: row;
+                    }
+
+                    .feedback_card {
+                        width: 515px;
+                        height: 463px;
+                        padding: 20px 50px 70px 50px;
+                        background-color: $footer_color;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        @include responsive(md) {
+                            width: 523px;
+                            height: 371px;
+                        }
+
+                        @include responsive(sm) {
+                            width: 300px;
+                            height: 549px;
+                            text-align: center;
+                            padding: 20px;
+                        }
+
+                        img {
+                            padding: 0px 0px 20px 0px;
+                            width: 65px;
+                            height: 76px;
+                        }
+
+                        .date {
+                            font-size: 26px;
+                            font-weight: 500;
+                            line-height: 130%;
+                        }
+
+                        .text {
+                            font-size: 18px;
+                            line-height: 150%;
+                            font-weight: 400;
+                        }
+
+                        .name {
+                            font-size: 18px;
+                            line-height: 100%;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+
+            .btns {
+                margin-top: 60px;
+                width: 180px;
+                display: flex;
+                justify-content: space-between;
+
+                @include responsive(sm) {
+                    width: 300px;
+                    gap: 40px;
+                    justify-content: center;
+                }
+
+                button {
+                    width: 60px;
+                    height: 60px;
+                    border: 1px solid $footer_color;
+                    border-radius: 5px;
+                    background: transparent;
+                    cursor: pointer;
+                    transition: ease 0.3s;
+
+                    @media (hover: hover) {
+                        &:hover {
+                            background-color: $footer_bg;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .leave_feedback_btn {
+        border-radius: 5px;
+        border: 1px solid $footer_color;
+        color: $footer_color;
+        padding: 26px 45px;
+        background: transparent;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 100%;
+        cursor: pointer;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        transition: ease 0.3s;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: $footer_bg;
             }
         }
     }

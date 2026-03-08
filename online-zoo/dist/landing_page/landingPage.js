@@ -37,22 +37,26 @@ const petImages = {
     27: './assets/images/Sloth.jpg',
     28: './assets/images/Cheetah.jpg'
 };
-const container = document.getElementById('petsContainer');
-const loader = document.getElementById('petsLoader');
-const fetchError = document.getElementById('fetchError');
+const petsContainer = document.getElementById('petsContainer');
+const petsLoader = document.getElementById('petsLoader');
+const petsFetchError = document.getElementById('petsError');
+const petsNextBtn = document.getElementById('nextBtn');
+const petsPrevBtn = document.getElementById('prevBtn');
+const petsBtns = document.getElementById('petsBtns');
 function fetchPets() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const response = yield fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets');
             const data = yield response.json();
             const pets = data.data;
-            loader.style.display = 'none';
+            petsLoader.style.display = 'none';
             renderPets(pets);
-            slider();
+            Slider(petsContainer, '.slide', petsNextBtn, petsPrevBtn);
         }
         catch (error) {
             console.error(error);
-            fetchError.textContent = 'Something went wrong. Please, refresh the page';
+            petsFetchError.textContent = 'Something went wrong. Please, refresh the page!';
+            petsBtns.style.display = 'none';
         }
     });
 }
@@ -81,17 +85,65 @@ function renderPets(pets) {
             `;
             slide.appendChild(card);
         });
-        container.appendChild(slide);
+        petsContainer.appendChild(slide);
     }
 }
-function slider() {
-    const slides = document.querySelectorAll('.slide');
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
+document.addEventListener('DOMContentLoaded', () => {
+    fetchPets();
+});
+const feedbackContainer = document.getElementById('feedbackContainer');
+const feedbackLoader = document.getElementById('feedbackLoader');
+const feedbackFetchError = document.getElementById('feedbackFetchError');
+const feedbackBtns = document.getElementById('feedbackBtns');
+const feedbackNextBtn = document.getElementById('feedbackNextBtn');
+const feedbackPrevBtn = document.getElementById('feedbackPrevBtn');
+function fetchFeedback() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/feedback');
+            const data = yield response.json();
+            const feedback = data.data;
+            feedbackLoader.style.display = 'none';
+            renderFeedback(feedback);
+            Slider(feedbackContainer, '.slide', feedbackNextBtn, feedbackPrevBtn);
+        }
+        catch (error) {
+            console.error(error);
+            feedbackFetchError.textContent = 'Something went wrong. Please, refresh the page!';
+            feedbackBtns.style.display = 'none';
+        }
+    });
+}
+function renderFeedback(feedbacks) {
+    const cardsPerSlide = 2; // 2 cards per slide
+    for (let i = 0; i < feedbacks.length; i += cardsPerSlide) {
+        const slide = document.createElement('div');
+        slide.classList.add('slide');
+        const slice = feedbacks.slice(i, i + cardsPerSlide); // get 2 pets
+        slice.forEach(feedback => {
+            const card = document.createElement('div');
+            card.classList.add('feedback_card');
+            card.innerHTML = `
+                        <img src="./assets/icons/Feedback_svg.svg" alt="Feedback">
+                        <div class="date">${feedback.city}, ${feedback.month} ${feedback.year}</div>
+                        <div class="text">${feedback.text}</div>
+                        <div class="name">${feedback.name}</div>
+                        `;
+            slide.appendChild(card);
+        });
+        feedbackContainer.appendChild(slide);
+    }
+}
+document.addEventListener('DOMContentLoaded', () => {
+    fetchFeedback();
+});
+// slider------------------------------------------------------------------------------------------------------
+function Slider(container, slideSelector, nextBtn, prevBtn, gap = 30) {
+    const slides = container.querySelectorAll(slideSelector);
     if (!slides.length)
         return;
     let currentIndex = 0;
-    const slideWidth = slides[0].offsetWidth + 40;
+    const slideWidth = slides[0].offsetWidth + gap;
     nextBtn.addEventListener('click', () => {
         currentIndex++;
         if (currentIndex >= slides.length) {
@@ -110,8 +162,5 @@ function slider() {
         container.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 }
-document.addEventListener('DOMContentLoaded', () => {
-    fetchPets();
-});
 export {};
 //# sourceMappingURL=landingPage.js.map

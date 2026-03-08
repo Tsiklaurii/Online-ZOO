@@ -36,22 +36,31 @@ const petImages: Record<number, string> = {
     28: './assets/images/Cheetah.jpg'
 }
 
-const container = document.getElementById('petsContainer') as HTMLElement
-const loader = document.getElementById('petsLoader') as HTMLElement
-const fetchError = document.getElementById('fetchError') as HTMLElement
+const petsContainer = document.getElementById('petsContainer') as HTMLElement
+const petsLoader = document.getElementById('petsLoader') as HTMLElement
+const petsFetchError = document.getElementById('petsError') as HTMLElement
+const petsNextBtn = document.getElementById('nextBtn') as HTMLElement
+const petsPrevBtn = document.getElementById('prevBtn') as HTMLElement
+const petsBtns = document.getElementById('petsBtns') as HTMLElement
 
 async function fetchPets(): Promise<void> {
     try {
         const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets')
         const data = await response.json();
         const pets: Pet[] = data.data;
-        loader.style.display = 'none'
+        petsLoader.style.display = 'none'
 
         renderPets(pets)
-        slider()
+        Slider(
+            petsContainer,
+            '.slide',
+            petsNextBtn,
+            petsPrevBtn
+        )
     } catch (error) {
         console.error(error)
-        fetchError.textContent = 'Something went wrong. Please, refresh the page'
+        petsFetchError.textContent = 'Something went wrong. Please, refresh the page!'
+        petsBtns.style.display = 'none'
     }
 }
 
@@ -81,19 +90,86 @@ function renderPets(pets: Pet[]): void {
             `;
             slide.appendChild(card);
         });
-        container.appendChild(slide);
+        petsContainer.appendChild(slide);
     }
 }
 
-function slider(): void {
-    const slides = document.querySelectorAll('.slide')
-    const nextBtn = document.getElementById('nextBtn') as HTMLElement
-    const prevBtn = document.getElementById('prevBtn') as HTMLElement
+document.addEventListener('DOMContentLoaded', () => {
+    fetchPets();
+})
 
+// feedback----------------------------------------------------------------------------------------------------
+interface Feedback {
+    id: number
+    city: string
+    month: string
+    year: string
+    text: string
+    name: string
+}
+
+const feedbackContainer = document.getElementById('feedbackContainer') as HTMLElement
+const feedbackLoader = document.getElementById('feedbackLoader') as HTMLElement
+const feedbackFetchError = document.getElementById('feedbackFetchError') as HTMLElement
+const feedbackBtns = document.getElementById('feedbackBtns') as HTMLElement
+const feedbackNextBtn = document.getElementById('feedbackNextBtn') as HTMLElement
+const feedbackPrevBtn = document.getElementById('feedbackPrevBtn') as HTMLElement
+
+async function fetchFeedback(): Promise<void> {
+    try {
+        const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/feedback')
+        const data = await response.json();
+        const feedback: Feedback[] = data.data;
+        feedbackLoader.style.display = 'none'
+
+        renderFeedback(feedback)
+        Slider(
+            feedbackContainer,
+            '.slide',
+            feedbackNextBtn,
+            feedbackPrevBtn
+        )
+    } catch (error) {
+        console.error(error)
+        feedbackFetchError.textContent = 'Something went wrong. Please, refresh the page!'
+        feedbackBtns.style.display = 'none'
+    }
+}
+
+function renderFeedback(feedbacks: Feedback[]): void {
+    const cardsPerSlide = 2; // 2 cards per slide
+    for (let i = 0; i < feedbacks.length; i += cardsPerSlide) {
+        const slide = document.createElement('div');
+        slide.classList.add('slide');
+
+        const slice = feedbacks.slice(i, i + cardsPerSlide); // get 2 pets
+        slice.forEach(feedback => {
+            const card = document.createElement('div');
+            card.classList.add('feedback_card');
+            card.innerHTML = `
+                        <img src="./assets/icons/Feedback_svg.svg" alt="Feedback">
+                        <div class="date">${feedback.city}, ${feedback.month} ${feedback.year}</div>
+                        <div class="text">${feedback.text}</div>
+                        <div class="name">${feedback.name}</div>
+                        `;
+            slide.appendChild(card);
+        });
+        feedbackContainer.appendChild(slide);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchFeedback();
+})
+
+
+// slider------------------------------------------------------------------------------------------------------
+function Slider(container: HTMLElement, slideSelector: string, nextBtn: HTMLElement, prevBtn: HTMLElement, gap: number = 30): void {
+    const slides = container.querySelectorAll(slideSelector)
     if (!slides.length) return
 
     let currentIndex = 0
-    const slideWidth = (slides[0] as HTMLElement).offsetWidth + 40
+    const slideWidth = (slides[0] as HTMLElement).offsetWidth + gap
 
     nextBtn.addEventListener('click', () => {
         currentIndex++
@@ -102,6 +178,7 @@ function slider(): void {
         }
         updateSlider()
     })
+
     prevBtn.addEventListener('click', () => {
         currentIndex--
         if (currentIndex < 0) {
@@ -109,11 +186,8 @@ function slider(): void {
         }
         updateSlider()
     })
+
     function updateSlider() {
         container.style.transform = `translateX(-${currentIndex * slideWidth}px)`
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    fetchPets();
-})
