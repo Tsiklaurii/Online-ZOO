@@ -2269,6 +2269,9 @@ footer .footer_soc_networks .soc_networks {
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
+.sign_in h1 {
+  font-size: 40px;
+}
 .sign_in div input {
   padding: 15px;
   border-radius: 5px;
