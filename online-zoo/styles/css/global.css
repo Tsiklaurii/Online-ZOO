@@ -853,6 +853,31 @@ header .networks img {
   width: 40px;
   height: 40px;
 }
+header .networks .user {
+  position: relative;
+}
+header .networks .user button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+header .networks .user .user_popup {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: #FFFFFF;
+  border: 1px solid #A4A8AE;
+  border-radius: 5px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+header .networks .user .hidden {
+  display: none;
+}
 @media (max-width: 1400px) {
   header .container {
     gap: 163px;
@@ -2231,4 +2256,56 @@ footer .footer_soc_networks .soc_networks {
   width: 1160px;
   margin: auto;
   margin-bottom: 150px;
+}
+
+.sign_in {
+  width: 500px;
+  margin: 250px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 50px 20px 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+.sign_in div input {
+  padding: 15px;
+  border-radius: 5px;
+  width: 400px;
+  font-size: 20px;
+  border: 1px solid #A4A8AE;
+}
+.sign_in div input:focus {
+  outline: none;
+}
+.sign_in div input.input_error {
+  border: 2px solid red;
+}
+.sign_in div .error {
+  color: red;
+  font-size: 14px;
+}
+.sign_in button {
+  padding: 20px;
+  font-size: 20px;
+  background-color: rgb(122, 122, 122);
+  color: #FFFFFF;
+  font-weight: 600;
+  width: 400px;
+  margin: auto;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+  transition: background-color 0.3s;
+}
+.sign_in button:hover {
+  background-color: rgb(122, 122, 122);
+}
+.sign_in button:enabled {
+  background-color: rgb(21, 131, 21);
+  cursor: pointer;
+}
+.sign_in button:enabled:hover {
+  background-color: rgb(9, 100, 9);
 }/*# sourceMappingURL=global.css.map */
