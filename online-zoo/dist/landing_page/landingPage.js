@@ -51,7 +51,7 @@ function fetchPets() {
             const pets = data.data;
             petsLoader.style.display = 'none';
             renderPets(pets);
-            Slider(petsContainer, '.slide', petsNextBtn, petsPrevBtn);
+            slider(petsContainer, '.slide', petsNextBtn, petsPrevBtn, 40);
         }
         catch (error) {
             console.error(error);
@@ -61,11 +61,11 @@ function fetchPets() {
     });
 }
 function renderPets(pets) {
-    const cardsPerSlide = 2; // 2 cards per slide
+    const cardsPerSlide = 2;
     for (let i = 0; i < pets.length; i += cardsPerSlide) {
         const slide = document.createElement('div');
         slide.classList.add('slide');
-        const slice = pets.slice(i, i + cardsPerSlide); // get 2 pets
+        const slice = pets.slice(i, i + cardsPerSlide);
         slice.forEach(pet => {
             const image = petImages[pet.id];
             const card = document.createElement('div');
@@ -105,7 +105,7 @@ function fetchFeedback() {
             const feedback = data.data;
             feedbackLoader.style.display = 'none';
             renderFeedback(feedback);
-            Slider(feedbackContainer, '.slide', feedbackNextBtn, feedbackPrevBtn);
+            slider(feedbackContainer, '.slide', feedbackNextBtn, feedbackPrevBtn, 30);
         }
         catch (error) {
             console.error(error);
@@ -138,10 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchFeedback();
 });
 // slider------------------------------------------------------------------------------------------------------
-function Slider(container, slideSelector, nextBtn, prevBtn, gap = 30) {
+function slider(container, slideSelector, nextBtn, prevBtn, gap) {
     const slides = container.querySelectorAll(slideSelector);
-    if (!slides.length)
-        return;
     let currentIndex = 0;
     const slideWidth = slides[0].offsetWidth + gap;
     nextBtn.addEventListener('click', () => {

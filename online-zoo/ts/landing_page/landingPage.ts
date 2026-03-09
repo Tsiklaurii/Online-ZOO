@@ -1,3 +1,4 @@
+// meet some our pets ------------------------------------------------------------------------------------
 interface Pet {
     id: number
     name: string
@@ -51,11 +52,12 @@ async function fetchPets(): Promise<void> {
         petsLoader.style.display = 'none'
 
         renderPets(pets)
-        Slider(
+        slider(
             petsContainer,
             '.slide',
             petsNextBtn,
-            petsPrevBtn
+            petsPrevBtn,
+            40
         )
     } catch (error) {
         console.error(error)
@@ -65,12 +67,12 @@ async function fetchPets(): Promise<void> {
 }
 
 function renderPets(pets: Pet[]): void {
-    const cardsPerSlide = 2; // 2 cards per slide
+    const cardsPerSlide = 2; 
     for (let i = 0; i < pets.length; i += cardsPerSlide) {
         const slide = document.createElement('div');
         slide.classList.add('slide');
 
-        const slice = pets.slice(i, i + cardsPerSlide); // get 2 pets
+        const slice = pets.slice(i, i + cardsPerSlide);
         slice.forEach(pet => {
             const image = petImages[pet.id];
             const card = document.createElement('div');
@@ -98,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchPets();
 })
 
-// feedback----------------------------------------------------------------------------------------------------
+// feedback ----------------------------------------------------------------------------------------------------
 interface Feedback {
     id: number
     city: string
@@ -123,11 +125,12 @@ async function fetchFeedback(): Promise<void> {
         feedbackLoader.style.display = 'none'
 
         renderFeedback(feedback)
-        Slider(
+        slider(
             feedbackContainer,
             '.slide',
             feedbackNextBtn,
-            feedbackPrevBtn
+            feedbackPrevBtn,
+            30
         )
     } catch (error) {
         console.error(error)
@@ -162,12 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchFeedback();
 })
 
-
 // slider------------------------------------------------------------------------------------------------------
-function Slider(container: HTMLElement, slideSelector: string, nextBtn: HTMLElement, prevBtn: HTMLElement, gap: number = 30): void {
+function slider(container: HTMLElement, slideSelector: string, nextBtn: HTMLElement, prevBtn: HTMLElement, gap: number): void {
     const slides = container.querySelectorAll(slideSelector)
-    if (!slides.length) return
-
     let currentIndex = 0
     const slideWidth = (slides[0] as HTMLElement).offsetWidth + gap
 
@@ -178,7 +178,6 @@ function Slider(container: HTMLElement, slideSelector: string, nextBtn: HTMLElem
         }
         updateSlider()
     })
-
     prevBtn.addEventListener('click', () => {
         currentIndex--
         if (currentIndex < 0) {
@@ -186,7 +185,6 @@ function Slider(container: HTMLElement, slideSelector: string, nextBtn: HTMLElem
         }
         updateSlider()
     })
-
     function updateSlider() {
         container.style.transform = `translateX(-${currentIndex * slideWidth}px)`
     }
