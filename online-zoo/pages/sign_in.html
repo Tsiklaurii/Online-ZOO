@@ -9,22 +9,23 @@
 </head>
 
 <body>
-    <form class="sign_in" id="signInForm">
-        <h1>Sign In</h1>
+    <div class="sign_in_container">
+        <form class="sign_in" id="signInForm">
+            <h1>Sign In</h1>
 
-        <div class="input_group">
-            <input type="text" id="loginInput" placeholder="Login">
-            <div class="error" id="loginError"></div>
-        </div>
+            <div class="input_group">
+                <input type="text" id="loginInput" placeholder="Login">
+                <div class="error" id="loginError"></div>
+            </div>
 
-        <div class="input_group">
-            <input type="password" id="passwordInput" placeholder="Password">
-            <div class="error" id="passwordError"></div>
-        </div>
+            <div class="input_group">
+                <input type="password" id="passwordInput" placeholder="Password">
+                <div class="error" id="passwordError"></div>
+            </div>
 
-        <button id="signInBtn" disabled>Sign In</button>
-        <div class="error" id="authError"></div>
-    </form>
+            <button id="signInBtn" disabled>Sign In</button>
+        </form>
+    </div>
 
     <script type="module" src="../dist/sign_in/sign_in.js"></script>
 </body>

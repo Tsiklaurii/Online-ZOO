@@ -1,65 +1,75 @@
-.sign_in {
-    width: 500px;
-    margin: 250px auto;
-    text-align: center;
+.sign_in_container,
+.register_in_container {
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 50px 50px 20px 50px;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
 
-    h1 {
-        font-size: 40px;
-    }
+    .sign_in,
+    .register {
+        width: 500px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 50px 50px 50px 50px;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 
-    div {
-        input {
-            padding: 15px;
-            border-radius: 5px;
-            width: 400px;
+        h1 {
+            font-size: 40px;
+        }
+
+        div {
+            input {
+                padding: 15px;
+                border-radius: 5px;
+                width: 400px;
+                font-size: 20px;
+                border: 1px solid $pop_up_border;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &.input_error {
+                    border: 2px solid $error;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .error {
+                color: $error;
+                font-size: 14px;
+            }
+        }
+
+        button {
+            padding: 20px;
             font-size: 20px;
-            border: 1px solid $pop_up_border;
-
-            &:focus {
-                outline: none;
-            }
-
-            &.input_error {
-                border: 2px solid $error;
-            }
-        }
-
-        .error {
-            color: $error;
-            font-size: 14px;
-        }
-    }
-
-    button {
-        padding: 20px;
-        font-size: 20px;
-        background-color: $auth_disabled;
-        color: $footer_color;
-        font-weight: 600;
-        width: 400px;
-        margin: auto;
-        border: none;
-        border-radius: 5px;
-
-        cursor: not-allowed;
-        transition: background-color 0.3s;
-
-        &:hover {
             background-color: $auth_disabled;
-        }
+            color: $footer_color;
+            font-weight: 600;
+            width: 400px;
+            margin: auto;
+            border: none;
+            border-radius: 5px;
 
-        &:enabled {
-            background-color: $auth;
-            cursor: pointer;
+            cursor: not-allowed;
+            transition: background-color 0.3s;
 
             &:hover {
-                background-color: $auth_hover;
+                background-color: $auth_disabled;
+            }
+
+            &:enabled {
+                background-color: $auth;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $auth_hover;
+                }
             }
         }
     }

@@ -5,15 +5,34 @@ const userName = document.getElementById('userName') as HTMLElement
 interface User {
     name: string
     email: string
+    login: string
 }
 
-function getUser(): User | null {
-    const user = localStorage.getItem('user')
-    return user ? JSON.parse(user) : null
+async function getUser(): Promise<User | null> {
+    const token = localStorage.getItem('token')
+    if (!token) return null
+    try {
+        const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/auth/profile',
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        )
+        if (!response.ok) {
+            localStorage.removeItem('token')
+            return null
+        }
+        const json = await response.json()
+        return json.data
+    } catch (error) {
+        console.error(error)
+        return null
+    }
 }
 
-function renderUserMenu(): void {
-    const user = getUser()
+async function renderUserMenu(): Promise<void> {
+    const user = await getUser()
 
     if (!user) {
         userPopup.innerHTML = `
@@ -26,20 +45,26 @@ function renderUserMenu(): void {
     userName.textContent = user.name
 
     userPopup.innerHTML = `
-        <div><strong>${user.name}</strong></div>
+        <div class="user_name">${user.name}</div>
         <div>${user.email}</div>
-        <button id="logoutBtn">Sign Out</button>
+        <button id="logoutBtn" class="sign_out">Sign Out</button>
     `
     const logoutBtn = document.getElementById('logoutBtn')
-
     logoutBtn?.addEventListener('click', () => {
-        localStorage.removeItem('user')
+        localStorage.removeItem('token')
         renderUserMenu()
     })
 }
 userIcon.addEventListener('click', () => {
     userPopup.classList.toggle('hidden')
 })
+
 document.addEventListener('DOMContentLoaded', () => {
     renderUserMenu()
+})
+
+document.addEventListener('click', (e) => {
+    if (!userIcon.contains(e.target as Node) && !userPopup.contains(e.target as Node)) {
+        userPopup.classList.add('hidden')
+    }
 })

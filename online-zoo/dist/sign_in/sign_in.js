@@ -1,3 +1,12 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 const loginInput = document.getElementById('loginInput');
 const passwordInput = document.getElementById('passwordInput');
 const loginError = document.getElementById('loginError');
@@ -56,5 +65,33 @@ function updateButtonState() {
     signInBtn.disabled = !(loginValid && passwordValid);
     signInBtn.style.cursor = signInBtn.disabled ? 'default' : 'pointer';
 }
+signInBtn.addEventListener('click', (e) => __awaiter(void 0, void 0, void 0, function* () {
+    e.preventDefault();
+    try {
+        const response = yield fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                login: loginInput.value,
+                password: passwordInput.value
+            })
+        });
+        const data = yield response.json();
+        if (!response.ok) {
+            alert("Incorrect login or password, try again!");
+            loginInput.value = '';
+            passwordInput.value = '';
+            signInBtn.disabled = true;
+            return;
+        }
+        localStorage.setItem('token', data.data.access_token);
+        window.location.href = '../index.html';
+    }
+    catch (error) {
+        console.error(error);
+    }
+}));
 export {};
 //# sourceMappingURL=sign_in.js.map

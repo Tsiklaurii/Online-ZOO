@@ -86,10 +86,40 @@ header {
                 gap: 15px;
                 font-size: 20px;
                 text-align: center;
+
+                .sign_out {
+                    font-size: 18px;
+                    border: 1px solid $pop_up_border;
+                    padding: 6px 0px;
+                    border-radius: 5px;
+                    transition: 0.3s ease;
+
+                    &:hover {
+                        background-color: $orange_btn_hover;
+                        color: $footer_color;
+                        border: 1px solid $orange_btn_hover;
+                    }
+                }
+
+                .user_name {
+                    font-size: 25px;
+                    font-weight: 600;
+                }
             }
 
             .hidden {
                 display: none;
+            }
+
+            .user_icon {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .user_name {
+                    font-size: 20px;
+                    font-weight: 600;
+                }
             }
         }
     }

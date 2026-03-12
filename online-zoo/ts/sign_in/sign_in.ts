@@ -64,3 +64,34 @@ function updateButtonState() {
     signInBtn.disabled = !(loginValid && passwordValid)
     signInBtn.style.cursor = signInBtn.disabled ? 'default' : 'pointer'
 }
+
+signInBtn.addEventListener('click', async (e) => {
+    e.preventDefault()
+    try {
+        const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/auth/login',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    login: loginInput.value,
+                    password: passwordInput.value
+                })
+            }
+        )
+        const data = await response.json()
+
+        if (!response.ok) {
+            alert("Incorrect login or password, try again!")
+            loginInput.value = ''
+            passwordInput.value = ''
+            signInBtn.disabled = true
+            return
+        }
+        localStorage.setItem('token', data.data.access_token)
+        window.location.href = '../index.html'
+    } catch (error) {
+        console.error(error)
+    }
+})
