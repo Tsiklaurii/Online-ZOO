@@ -56,6 +56,21 @@ function validateOtherAmount(value) {
     }
     return null;
 }
+const otherAmountError = document.createElement('p');
+otherAmountInput.after(otherAmountError);
+otherAmountInput.addEventListener('blur', () => {
+    const error = validateOtherAmount(otherAmountInput.value);
+    if (error) {
+        otherAmountError.textContent = error;
+        otherAmountError.style.color = 'red';
+        otherAmountInput.classList.add('input_error');
+    }
+    updateButtonState();
+});
+otherAmountInput.addEventListener('focus', () => {
+    otherAmountError.textContent = '';
+    otherAmountInput.classList.remove('input_error');
+});
 amountButtons.forEach(button => {
     button.addEventListener('click', () => {
         amountButtons.forEach(btn => btn.classList.remove('active'));
