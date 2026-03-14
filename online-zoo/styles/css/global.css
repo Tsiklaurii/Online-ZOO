@@ -2095,7 +2095,7 @@ footer .footer_soc_networks .soc_networks {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 @media (max-width: 600px) {
   .donation_popup_2 .popup_content .form_step .inputs .payment_inputs .date label {

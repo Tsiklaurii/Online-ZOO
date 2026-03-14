@@ -69,24 +69,6 @@ function validateOtherAmount(value: string): string | null {
     return null
 }
 
-const otherAmountError = document.createElement('p')
-otherAmountInput.after(otherAmountError)
-
-otherAmountInput.addEventListener('blur', () => {
-    const error = validateOtherAmount(otherAmountInput.value)
-    if (error) {
-        otherAmountError.textContent = error
-        otherAmountError.style.color = 'red'
-        otherAmountInput.classList.add('input_error')
-    }
-    updateButtonState()
-})
-
-otherAmountInput.addEventListener('focus', () => {
-    otherAmountError.textContent = ''
-    otherAmountInput.classList.remove('input_error')
-})
-
 amountButtons.forEach(button => {
     button.addEventListener('click', () => {
         amountButtons.forEach(btn => btn.classList.remove('active'))
@@ -107,7 +89,6 @@ otherAmountInput.addEventListener('input', () => {
 })
 
 petsSelect.addEventListener('change', updateButtonState)
-
 function updateButtonState() {
     const otherAmountValid = !validateOtherAmount(otherAmountInput.value)
     const petSelected = petsSelect.value !== ''
@@ -190,10 +171,8 @@ fullNameInput.addEventListener('input', updateStep2ButtonState)
 emailInput.addEventListener('input', updateStep2ButtonState)
 
 function updateStep2ButtonState() {
-
     const nameValid = !validateName(fullNameInput.value)
     const emailValid = !validateEmail(emailInput.value)
-
     step2NextBtn.disabled = !(nameValid && emailValid)
     step2NextBtn.style.cursor = step2NextBtn.disabled ? 'default' : 'pointer'
 }
@@ -205,6 +184,7 @@ function goToStep3() {
 
 step2NextBtn.addEventListener('click', goToStep3)
 
+// If user has been logged in... -----------------------------------------------------------------------------
 async function getUser(): Promise<User | null> {
     const token = localStorage.getItem('token')
     if (!token) return null
@@ -246,11 +226,13 @@ const completeDonationBtn = document.getElementById('completeDonation') as HTMLB
 
 const cardError = document.createElement('p')
 const cvvError = document.createElement('p')
-const dateError = document.createElement('p')
+const monthError = document.createElement('p')
+const yearError = document.createElement('p')
 
 cardInput.after(cardError)
 cvvInput.after(cvvError)
-yearInput.after(dateError)
+monthInput.after(monthError)
+yearInput.after(yearError)
 
 function validateCardNumber(value: string): string | null {
     if (!/^\d{16}$/.test(value)) {
@@ -309,25 +291,17 @@ cvvInput.addEventListener('blur', () => {
 })
 
 monthInput.addEventListener('blur', () => {
-    const monthError = validateMonth(monthInput.value)
-    const yearError = validateYear(yearInput.value)
-    const error = monthError || yearError
-
-    dateError.textContent = error || ''
-    dateError.style.color = 'red'
+    const error = validateMonth(monthInput.value)
+    monthError.textContent = error || ''
+    monthError.style.color = 'red'
     monthInput.classList.toggle('input_error', !!error)
-    yearInput.classList.toggle('input_error', !!error)
     updateStep3ButtonState()
 })
 
 yearInput.addEventListener('blur', () => {
-    const monthError = validateMonth(monthInput.value)
-    const yearError = validateYear(yearInput.value)
-    const error = monthError || yearError
-
-    dateError.textContent = error || ''
-    dateError.style.color = 'red'
-    monthInput.classList.toggle('input_error', !!error)
+    const error = validateYear(yearInput.value)
+    yearError.textContent = error || ''
+    yearError.style.color = 'red'
     yearInput.classList.toggle('input_error', !!error)
     updateStep3ButtonState()
 })
@@ -343,13 +317,13 @@ cvvInput.addEventListener('focus', () => {
 })
 
 monthInput.addEventListener('focus', () => {
-    dateError.textContent = ''
+    monthError.textContent = ''
     monthInput.classList.remove('input_error')
     yearInput.classList.remove('input_error')
 })
 
 yearInput.addEventListener('focus', () => {
-    dateError.textContent = ''
+    yearError.textContent = ''
     monthInput.classList.remove('input_error')
     yearInput.classList.remove('input_error')
 })
@@ -359,7 +333,6 @@ function updateStep3ButtonState(): void {
     const cvvValid = !validateCVV(cvvInput.value)
     const monthValid = !validateMonth(monthInput.value)
     const yearValid = !validateYear(yearInput.value)
-
     completeDonationBtn.disabled = !(cardValid && cvvValid && monthValid && yearValid)
     completeDonationBtn.style.cursor = completeDonationBtn.disabled ? 'default' : 'pointer'
 }
@@ -389,8 +362,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     saveCardContainer.appendChild(saveCardCheckbox)
     saveCardContainer.appendChild(saveCardLabel)
 
-    step3.querySelector('.inputs')?.prepend(saveCardContainer)
-
     const savedCards: { name: string, card: string, cvv: string, month: string, year: string }[] = JSON.parse(localStorage.getItem(savedCardsKey) || '[]')
 
     if (savedCards.length > 0) {
@@ -409,7 +380,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             option.textContent = `${masked}`
             select.appendChild(option)
         })
-
         step3.querySelector('.inputs')?.prepend(select)
 
         select.addEventListener('change', () => {
@@ -432,16 +402,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 })
 
-// post---------------------------------------------------------------------------------------------------
+// send data ------------------------------------------------------------------------------------------
 
 completeDonationBtn.addEventListener('click', async () => {
-    const cardValid = !validateCardNumber(cardInput.value)
-    const cvvValid = !validateCVV(cvvInput.value)
-    const monthValid = !validateMonth(monthInput.value)
-    const yearValid = !validateYear(yearInput.value)
-
-    if (!(cardValid && cvvValid && monthValid && yearValid)) return
-
     const amount = selectedAmount || otherAmountInput.value
     const petOption = petsSelect.selectedOptions[0]
     const petName = petOption?.textContent || 'your chosen pet'
@@ -454,6 +417,7 @@ completeDonationBtn.addEventListener('click', async () => {
         petId: Number(petId)
     }
 
+    // save card --------------------------------------------------------------------------------------
     const saveCardCheckbox = document.getElementById('saveCardCheckbox') as HTMLInputElement | null
     if (saveCardCheckbox?.checked) {
         const savedCards: { name: string, card: string, cvv: string, month: string, year: string }[] =
@@ -474,24 +438,18 @@ completeDonationBtn.addEventListener('click', async () => {
     }
 
     try {
-        const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/donations', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(donationData)
-        })
-
+        const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/donations',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(donationData)
+            })
         if (!response.ok) throw new Error('Donation failed')
 
         alert(`Thank you for your donation of ${amount} to ${petName}!`)
         window.location.href = 'index.html'
-
-        cardInput.value = ''
-        cvvInput.value = ''
-        monthInput.value = ''
-        yearInput.value = ''
-        updateStep3ButtonState()
     } catch (error) {
         console.error(error)
         alert('Something went wrong. Please, try again later.')

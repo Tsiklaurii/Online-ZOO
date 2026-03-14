@@ -56,21 +56,6 @@ function validateOtherAmount(value) {
     }
     return null;
 }
-const otherAmountError = document.createElement('p');
-otherAmountInput.after(otherAmountError);
-otherAmountInput.addEventListener('blur', () => {
-    const error = validateOtherAmount(otherAmountInput.value);
-    if (error) {
-        otherAmountError.textContent = error;
-        otherAmountError.style.color = 'red';
-        otherAmountInput.classList.add('input_error');
-    }
-    updateButtonState();
-});
-otherAmountInput.addEventListener('focus', () => {
-    otherAmountError.textContent = '';
-    otherAmountInput.classList.remove('input_error');
-});
 amountButtons.forEach(button => {
     button.addEventListener('click', () => {
         amountButtons.forEach(btn => btn.classList.remove('active'));
@@ -167,6 +152,7 @@ function goToStep3() {
     step3.classList.add('active');
 }
 step2NextBtn.addEventListener('click', goToStep3);
+// If user has been logged in... -----------------------------------------------------------------------------
 function getUser() {
     return __awaiter(this, void 0, void 0, function* () {
         const token = localStorage.getItem('token');
@@ -207,10 +193,12 @@ const yearInput = document.getElementById('year');
 const completeDonationBtn = document.getElementById('completeDonation');
 const cardError = document.createElement('p');
 const cvvError = document.createElement('p');
-const dateError = document.createElement('p');
+const monthError = document.createElement('p');
+const yearError = document.createElement('p');
 cardInput.after(cardError);
 cvvInput.after(cvvError);
-yearInput.after(dateError);
+monthInput.after(monthError);
+yearInput.after(yearError);
 function validateCardNumber(value) {
     if (!/^\d{16}$/.test(value)) {
         return 'Card number must be exactly 16 digits';
@@ -262,22 +250,16 @@ cvvInput.addEventListener('blur', () => {
     updateStep3ButtonState();
 });
 monthInput.addEventListener('blur', () => {
-    const monthError = validateMonth(monthInput.value);
-    const yearError = validateYear(yearInput.value);
-    const error = monthError || yearError;
-    dateError.textContent = error || '';
-    dateError.style.color = 'red';
+    const error = validateMonth(monthInput.value);
+    monthError.textContent = error || '';
+    monthError.style.color = 'red';
     monthInput.classList.toggle('input_error', !!error);
-    yearInput.classList.toggle('input_error', !!error);
     updateStep3ButtonState();
 });
 yearInput.addEventListener('blur', () => {
-    const monthError = validateMonth(monthInput.value);
-    const yearError = validateYear(yearInput.value);
-    const error = monthError || yearError;
-    dateError.textContent = error || '';
-    dateError.style.color = 'red';
-    monthInput.classList.toggle('input_error', !!error);
+    const error = validateYear(yearInput.value);
+    yearError.textContent = error || '';
+    yearError.style.color = 'red';
     yearInput.classList.toggle('input_error', !!error);
     updateStep3ButtonState();
 });
@@ -290,12 +272,12 @@ cvvInput.addEventListener('focus', () => {
     cvvInput.classList.remove('input_error');
 });
 monthInput.addEventListener('focus', () => {
-    dateError.textContent = '';
+    monthError.textContent = '';
     monthInput.classList.remove('input_error');
     yearInput.classList.remove('input_error');
 });
 yearInput.addEventListener('focus', () => {
-    dateError.textContent = '';
+    yearError.textContent = '';
     monthInput.classList.remove('input_error');
     yearInput.classList.remove('input_error');
 });
@@ -315,7 +297,7 @@ yearInput.addEventListener('input', updateStep3ButtonState);
 const savedCardsKey = 'savedCards';
 const saveCardContainer = document.getElementById('saveCardContainer');
 document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, void 0, function* () {
-    var _a, _b;
+    var _a;
     const user = yield getUser();
     if (!user)
         return;
@@ -327,7 +309,6 @@ document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, vo
     saveCardLabel.textContent = 'Save card info for future donations';
     saveCardContainer.appendChild(saveCardCheckbox);
     saveCardContainer.appendChild(saveCardLabel);
-    (_a = step3.querySelector('.inputs')) === null || _a === void 0 ? void 0 : _a.prepend(saveCardContainer);
     const savedCards = JSON.parse(localStorage.getItem(savedCardsKey) || '[]');
     if (savedCards.length > 0) {
         const select = document.createElement('select');
@@ -344,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, vo
             option.textContent = `${masked}`;
             select.appendChild(option);
         });
-        (_b = step3.querySelector('.inputs')) === null || _b === void 0 ? void 0 : _b.prepend(select);
+        (_a = step3.querySelector('.inputs')) === null || _a === void 0 ? void 0 : _a.prepend(select);
         select.addEventListener('change', () => {
             const idx = Number(select.value);
             if (!isNaN(idx) && savedCards[idx]) {
@@ -365,14 +346,8 @@ document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, vo
         });
     }
 }));
-// post---------------------------------------------------------------------------------------------------
+// send data ------------------------------------------------------------------------------------------
 completeDonationBtn.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
-    const cardValid = !validateCardNumber(cardInput.value);
-    const cvvValid = !validateCVV(cvvInput.value);
-    const monthValid = !validateMonth(monthInput.value);
-    const yearValid = !validateYear(yearInput.value);
-    if (!(cardValid && cvvValid && monthValid && yearValid))
-        return;
     const amount = selectedAmount || otherAmountInput.value;
     const petOption = petsSelect.selectedOptions[0];
     const petName = (petOption === null || petOption === void 0 ? void 0 : petOption.textContent) || 'your chosen pet';
@@ -383,6 +358,7 @@ completeDonationBtn.addEventListener('click', () => __awaiter(void 0, void 0, vo
         amount: Number(amount),
         petId: Number(petId)
     };
+    // save card --------------------------------------------------------------------------------------
     const saveCardCheckbox = document.getElementById('saveCardCheckbox');
     if (saveCardCheckbox === null || saveCardCheckbox === void 0 ? void 0 : saveCardCheckbox.checked) {
         const savedCards = JSON.parse(localStorage.getItem(savedCardsKey) || '[]');
@@ -410,11 +386,6 @@ completeDonationBtn.addEventListener('click', () => __awaiter(void 0, void 0, vo
             throw new Error('Donation failed');
         alert(`Thank you for your donation of ${amount} to ${petName}!`);
         window.location.href = 'index.html';
-        cardInput.value = '';
-        cvvInput.value = '';
-        monthInput.value = '';
-        yearInput.value = '';
-        updateStep3ButtonState();
     }
     catch (error) {
         console.error(error);

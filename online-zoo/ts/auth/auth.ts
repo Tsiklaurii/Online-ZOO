@@ -52,6 +52,7 @@ async function renderUserMenu(): Promise<void> {
     const logoutBtn = document.getElementById('logoutBtn')
     logoutBtn?.addEventListener('click', () => {
         localStorage.removeItem('token')
+        window.location.href = './index.html'
         renderUserMenu()
     })
 }

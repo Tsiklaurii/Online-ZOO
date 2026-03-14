@@ -54,6 +54,7 @@ function renderUserMenu() {
         const logoutBtn = document.getElementById('logoutBtn');
         logoutBtn === null || logoutBtn === void 0 ? void 0 : logoutBtn.addEventListener('click', () => {
             localStorage.removeItem('token');
+            window.location.href = './index.html';
             renderUserMenu();
         });
     });
