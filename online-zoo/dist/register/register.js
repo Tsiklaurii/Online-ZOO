@@ -18,6 +18,7 @@ const emailError = document.getElementById('emailError');
 const passwordError = document.getElementById('passwordError');
 const confirmPasswordError = document.getElementById('confirmPasswordError');
 const registerBtn = document.getElementById('registerBtn');
+const errorMessage = document.getElementById('error_message');
 function validateName(value) {
     if (value.length < 3) {
         return 'Name must be at least 3 characters';
@@ -152,7 +153,7 @@ registerBtn.addEventListener('click', (e) => __awaiter(void 0, void 0, void 0, f
         });
         const data = yield response.json();
         if (!response.ok) {
-            alert(JSON.stringify(data));
+            errorMessage.textContent = `${JSON.stringify(data)}`;
             return;
         }
         localStorage.setItem('token', data.data.access_token);

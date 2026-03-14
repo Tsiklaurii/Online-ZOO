@@ -3,6 +3,7 @@ const passwordInput = document.getElementById('passwordInput') as HTMLInputEleme
 const loginError = document.getElementById('loginError') as HTMLElement
 const passwordError = document.getElementById('passwordError') as HTMLElement
 const signInBtn = document.getElementById('signInBtn') as HTMLButtonElement
+const errorMessage = document.getElementById('error_message') as HTMLElement
 
 function validateLogin(value: string): string | null {
     if (value.length < 3) {
@@ -32,7 +33,6 @@ loginInput.addEventListener('blur', () => {
     if (error) {
         loginError.textContent = error
         loginInput.classList.add('input_error')
-        // loginInput.innerHTML = `<img src='../assets/icons/Error_icon.png' alt='Error icon'>`
     }
     updateButtonState()
 })
@@ -84,7 +84,7 @@ signInBtn.addEventListener('click', async (e) => {
         const data = await response.json()
 
         if (!response.ok) {
-            alert("Incorrect login or password, try again!")
+            errorMessage.textContent = 'Incorrect login or password, try again!'
             loginInput.value = ''
             passwordInput.value = ''
             signInBtn.disabled = true

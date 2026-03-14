@@ -12,6 +12,7 @@ const passwordInput = document.getElementById('passwordInput');
 const loginError = document.getElementById('loginError');
 const passwordError = document.getElementById('passwordError');
 const signInBtn = document.getElementById('signInBtn');
+const errorMessage = document.getElementById('error_message');
 function validateLogin(value) {
     if (value.length < 3) {
         return 'Login must be at least 3 characters';
@@ -38,7 +39,6 @@ loginInput.addEventListener('blur', () => {
     if (error) {
         loginError.textContent = error;
         loginInput.classList.add('input_error');
-        // loginInput.innerHTML = `<img src='../assets/icons/Error_icon.png' alt='Error icon'>`
     }
     updateButtonState();
 });
@@ -81,7 +81,7 @@ signInBtn.addEventListener('click', (e) => __awaiter(void 0, void 0, void 0, fun
         });
         const data = yield response.json();
         if (!response.ok) {
-            alert("Incorrect login or password, try again!");
+            errorMessage.textContent = 'Incorrect login or password, try again!';
             loginInput.value = '';
             passwordInput.value = '';
             signInBtn.disabled = true;

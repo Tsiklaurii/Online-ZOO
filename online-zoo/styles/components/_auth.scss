@@ -5,6 +5,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    .error_message {
+        color: $error;
+        font-size: 20px;
+        margin-top: 30px;
+    }
 
     .sign_in,
     .register {

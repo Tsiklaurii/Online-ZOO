@@ -2290,6 +2290,13 @@ footer .footer_soc_networks .soc_networks {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.sign_in_container .error_message,
+.register_in_container .error_message {
+  color: red;
+  font-size: 20px;
+  margin-top: 30px;
 }
 .sign_in_container .sign_in,
 .sign_in_container .register,

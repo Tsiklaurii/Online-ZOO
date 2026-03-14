@@ -9,6 +9,7 @@ const emailError = document.getElementById('emailError') as HTMLElement
 const passwordError = document.getElementById('passwordError') as HTMLElement
 const confirmPasswordError = document.getElementById('confirmPasswordError') as HTMLElement
 const registerBtn = document.getElementById('registerBtn') as HTMLButtonElement
+const errorMessage = document.getElementById('error_message') as HTMLElement
 
 function validateName(value: string): string | null {
     if (value.length < 3) {
@@ -164,7 +165,7 @@ registerBtn.addEventListener('click', async (e) => {
         const data = await response.json()
 
         if (!response.ok) {
-            alert(JSON.stringify(data))
+            errorMessage.textContent = `${JSON.stringify(data)}`
             return
         }
         localStorage.setItem('token', data.data.access_token)
