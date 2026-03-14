@@ -2332,6 +2332,10 @@ footer .footer_soc_networks .soc_networks {
 .register_in_container .register div input.input_error {
   border: 2px solid red;
   margin-bottom: 10px;
+  background-image: url("../../assets/icons/Error_icon.png");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 25px;
 }
 .sign_in_container .sign_in div .error,
 .sign_in_container .register div .error,

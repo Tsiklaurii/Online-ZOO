@@ -32,6 +32,7 @@ loginInput.addEventListener('blur', () => {
     if (error) {
         loginError.textContent = error
         loginInput.classList.add('input_error')
+        // loginInput.innerHTML = `<img src='../assets/icons/Error_icon.png' alt='Error icon'>`
     }
     updateButtonState()
 })
