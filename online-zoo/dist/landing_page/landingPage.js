@@ -160,5 +160,22 @@ function slider(container, slideSelector, nextBtn, prevBtn, gap) {
         container.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 }
+// together we care, save and protect! ---------------------------------------------------------------
+const openDonationPopup1 = document.getElementById('openDonationPopup1');
+const closeDonationPopup1 = document.getElementById('closeDonationPopup1');
+openDonationPopup1.addEventListener('click', () => {
+    const popup = document.getElementById("donationPopup1");
+    if (!popup)
+        return; // safety check
+    popup.classList.add("active");
+    document.body.classList.add("no_scroll");
+});
+closeDonationPopup1.addEventListener('click', () => {
+    const popup = document.getElementById("donationPopup1");
+    if (!popup)
+        return; // safety check
+    popup.classList.remove("active");
+    document.body.classList.remove("no_scroll");
+});
 export {};
 //# sourceMappingURL=landingPage.js.map

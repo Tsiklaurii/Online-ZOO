@@ -67,7 +67,7 @@ async function fetchPets(): Promise<void> {
 }
 
 function renderPets(pets: Pet[]): void {
-    const cardsPerSlide = 2; 
+    const cardsPerSlide = 2;
     for (let i = 0; i < pets.length; i += cardsPerSlide) {
         const slide = document.createElement('div');
         slide.classList.add('slide');
@@ -189,3 +189,22 @@ function slider(container: HTMLElement, slideSelector: string, nextBtn: HTMLElem
         container.style.transform = `translateX(-${currentIndex * slideWidth}px)`
     }
 }
+
+// together we care, save and protect! ---------------------------------------------------------------
+
+const openDonationPopup1 = document.getElementById('openDonationPopup1') as HTMLButtonElement
+const closeDonationPopup1 = document.getElementById('closeDonationPopup1') as HTMLImageElement
+
+openDonationPopup1.addEventListener('click', () => {
+    const popup = document.getElementById("donationPopup1") as HTMLDivElement | null;
+    if (!popup) return; // safety check
+    popup.classList.add("active");
+    document.body.classList.add("no_scroll");
+})
+
+closeDonationPopup1.addEventListener('click', () => {
+    const popup = document.getElementById("donationPopup1") as HTMLDivElement | null;
+    if (!popup) return; // safety check
+    popup.classList.remove("active");
+    document.body.classList.remove("no_scroll");
+})
