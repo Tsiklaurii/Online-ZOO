@@ -89,7 +89,7 @@
                 </div>
                 <div>
                     <h4>Quick Donate</h4>
-                    <button onclick="openDonationPopup2()">
+                    <button id="donateBtn">
                         <div class="btn_text">$ Donation Amount</div>
                         <div class="arrow"><img src="./assets/icons/Arrow.svg" alt="Arrow"></div>
                     </button>
@@ -218,20 +218,12 @@
                     </div>
                     <div class="other_amount">
                         <div>Other Amount</div>
-                        <input type="number" id="otherAmount">
+                        <input type="text" id="otherAmount">
                     </div>
                     <div class="special_pet">
                         <div>for special pet</div>
                         <select id="pets" name="pets" placeholder="Choose your favourite">
-                            <option value="" disabled selected hidden>Choose your favourite</option>
-                            <option value="volvo">Lukas the Panda</option>
-                            <option value="saab">Andy the Lemur</option>
-                            <option value="fiat">Glen the Gorilla</option>
-                            <option value="audi">Mike the Alligator</option>
-                            <option value="audi">Sarn & Lora the eagles family</option>
-                            <option value="audi">Liz the Koala</option>
-                            <option value="audi">Shake the Lion</option>
-                            <option value="audi">Senja the Tiger</option>
+                            <option value="">Choose your favourite</option>
                         </select>
                     </div>
                     <div>
@@ -240,7 +232,7 @@
                                 value="monthly_gift">
                             <label for="monthly_gift"> Make this a monthly recurring gift</label><br>
                         </div>
-                        <button type="button" onclick="goToStep2()">Next<img src="./assets/icons/Arrow.svg"
+                        <button type="button" id="step1NextBtn" disabled>Next<img src="./assets/icons/Arrow.svg"
                                 alt="Arrow"></button>
                     </div>
                 </div>
@@ -267,8 +259,8 @@
                     </div>
 
                     <div class="buttons">
-                        <button class="back" type="button" onclick="goBackToStep1()">Back</button>
-                        <button type="button" onclick="goToStep3()">Next <img src="./assets/icons/Arrow.svg"
+                        <button class="back" type="button" id="step2BackBtn">Back</button>
+                        <button type="button" id="step2NextBtn" disabled>Next<img src="./assets/icons/Arrow.svg"
                                 alt="Arrow"></button>
                     </div>
                 </div>
@@ -283,25 +275,27 @@
                         <div class="card_info">
                             <div>
                                 <label for="card"><span>* </span>Credit Card Number</label>
-                                <input type="number" id="card" required>
+                                <input type="text" id="card" required>
                             </div>
                             <div>
                                 <label for="cvv"><span>* </span>CVV Number</label>
-                                <input type="number" id="cvv" required>
+                                <input type="text" id="cvv" required>
                             </div>
                         </div>
                         <div class="date">
                             <label for="month"><span>* </span>Expiration Date</label>
                             <div id="date">
-                                <input type="number" id="month" placeholder="Month" min="1" max="12">
-                                <input type="number" id="year" placeholder="Year" min="2024" max="2040">
+                                <input type="text" id="month" placeholder="Month" min="1" max="12">
+                                <input type="text" id="year" placeholder="Year" min="2024" max="2040">
                             </div>
                         </div>
                     </div>
+                    
+                    <div id="saveCardContainer" class="save_card"></div>
 
                     <div class="buttons">
-                        <button class="back" type="button" onclick="goBackToStep2()">Back</button>
-                        <button class="complete" type="button" onclick="completeDonation()">Complete
+                        <button class="back" type="button" id="step3BackBtn">Back</button>
+                        <button class="complete" type="button" id="completeDonation" disabled>Complete
                             Donation</button>
                     </div>
                 </div>
@@ -373,6 +367,7 @@
 
     <script type="module" src="dist/landing_page/landingPage.js"></script>
     <script type="module" src="dist/auth/auth.js"></script>
+    <script type="module" src="dist/make_your_donation/make_your_donation.js"></script>
 </body>
 
 </html>

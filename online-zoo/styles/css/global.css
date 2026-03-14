@@ -1745,6 +1745,22 @@ footer .footer_soc_networks .soc_networks {
   gap: 40px;
   width: 100%;
 }
+.donation_popup_2 .popup_content .form_step .inputs .save_card {
+  display: flex;
+  gap: 15px;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.donation_popup_2 .popup_content .form_step .inputs .save_card input {
+  width: 20px;
+  cursor: pointer;
+}
+.donation_popup_2 .popup_content .form_step .inputs .saved_cards_select {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: 10px;
+}
 @media (max-width: 1000px) {
   .donation_popup_2 .popup_content .form_step .inputs {
     padding: 40px 77px;
@@ -1799,6 +1815,7 @@ footer .footer_soc_networks .soc_networks {
   border-radius: 5px;
   color: #FFFFFF;
   font-size: 18px;
+  cursor: pointer;
 }
 @media (max-width: 1000px) {
   .donation_popup_2 .popup_content .form_step .inputs .amount_buttons .amount_btn {
@@ -1898,6 +1915,7 @@ footer .footer_soc_networks .soc_networks {
   font-size: 18px;
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 @media (max-width: 1000px) {
   .donation_popup_2 .popup_content .form_step .inputs .special_pet select {
@@ -1938,7 +1956,7 @@ footer .footer_soc_networks .soc_networks {
   margin: auto;
   width: 200px;
   height: 74px;
-  background-color: #00A092;
+  background-color: rgb(122, 122, 122);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1948,13 +1966,22 @@ footer .footer_soc_networks .soc_networks {
   border-radius: 5px;
   color: #FFFFFF;
   font-size: 18px;
+  transition: background-color 0.3s;
+  cursor: not-allowed;
+}
+.donation_popup_2 .popup_content .form_step .inputs button:hover {
+  background-color: rgb(122, 122, 122);
+}
+.donation_popup_2 .popup_content .form_step .inputs button:enabled {
+  background-color: #00A092;
+}
+.donation_popup_2 .popup_content .form_step .inputs button:enabled:hover {
+  background-color: #05786E;
+  cursor: pointer;
 }
 .donation_popup_2 .popup_content .form_step .inputs button img {
   width: 24px;
   height: 22px;
-}
-.donation_popup_2 .popup_content .form_step .inputs button:hover {
-  background-color: #05786E;
 }
 .donation_popup_2 .popup_content .form_step .inputs .billing_inputs {
   display: flex;
@@ -2108,21 +2135,29 @@ footer .footer_soc_networks .soc_networks {
   font-weight: 600;
 }
 .donation_popup_2 .popup_content .form_step .inputs .buttons .back:hover {
+  background-color: inherit;
   text-decoration: underline;
 }
 .donation_popup_2 .popup_content .form_step .inputs .buttons .complete {
-  background-color: #F58021;
   width: auto;
   padding: 0px 55px;
+  cursor: not-allowed;
+}
+.donation_popup_2 .popup_content .form_step .inputs .buttons .complete:hover {
+  background-color: rgb(122, 122, 122);
+}
+.donation_popup_2 .popup_content .form_step .inputs .buttons .complete:enabled {
+  background-color: #F58021;
+}
+.donation_popup_2 .popup_content .form_step .inputs .buttons .complete:enabled:hover {
+  background-color: #D26004;
+  cursor: pointer;
 }
 @media (max-width: 600px) {
   .donation_popup_2 .popup_content .form_step .inputs .buttons .complete {
     padding: 0;
     width: 280px;
   }
-}
-.donation_popup_2 .popup_content .form_step .inputs .buttons .complete:hover {
-  background-color: #D26004;
 }
 .donation_popup_2 .popup_content .form_step.active {
   display: flex;
