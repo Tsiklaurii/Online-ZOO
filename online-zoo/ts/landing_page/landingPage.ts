@@ -1,3 +1,5 @@
+import { t } from "../language/switcher.js";
+
 // meet some our pets ------------------------------------------------------------------------------------
 interface Pet {
     id: number
@@ -61,7 +63,7 @@ async function fetchPets(): Promise<void> {
         )
     } catch (error) {
         console.error(error)
-        petsFetchError.textContent = 'Something went wrong. Please, refresh the page!'
+        petsFetchError.textContent = t("errors.fetchError")
         petsBtns.style.display = 'none'
     }
 }
@@ -134,7 +136,7 @@ async function fetchFeedback(): Promise<void> {
         )
     } catch (error) {
         console.error(error)
-        feedbackFetchError.textContent = 'Something went wrong. Please, refresh the page!'
+        feedbackFetchError.textContent = t("errors.fetchError")
         feedbackBtns.style.display = 'none'
     }
 }

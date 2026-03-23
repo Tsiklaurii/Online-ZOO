@@ -15,12 +15,12 @@
             <div class="menu">
                 <nav>
                     <ul class="nav">
-                        <li><a href="../index.html">About</a></li>
-                        <li><a href="map.html">Map</a></li>
-                        <li><a href="zoos_page_panda.html" class="active">Zoos</a></li>
-                        <li><a href="./contact_us.html">Contact us</a></li>
+                        <li><a href="../index.html" data-i18n="nav.about">About</a></li>
+                        <li><a href="map.html" data-i18n="nav.map">Map</a></li>
+                        <li><a href="zoos_page_panda.html" class="active" data-i18n="nav.zoos">Zoos</a></li>
+                        <li><a href="./contact_us.html" data-i18n="nav.contact">Contact us</a></li>
                         <li><a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=21-4877&t=DSve9ApAfrSFVRN4-0"
-                                target="_blank">Design</a>
+                                target="_blank" data-i18n="nav.design">Design</a>
                         </li>
                     </ul>
                 </nav>
@@ -31,6 +31,10 @@
                             src="../assets/icons/Instagram.svg" alt="Instagram"></a>
                     <a href="https://www.facebook.com/rsschoolEN"><img src="../assets/icons/Facebook.svg"
                             alt="Facebook"></a>
+                </div>
+                <div class="lang_switcher">
+                    <button id="langEn" class="lang_btn active">EN</button>
+                    <button id="langKa" class="lang_btn">KA</button>
                 </div>
             </div>
             <button class="hamburger"><img src="../assets/icons/Hamburger.svg" alt="Hamburger"></button>
@@ -72,12 +76,12 @@
         </div>
 
         <section class="live_cams">
-            <h1>live panda cams</h1>
+            <h1 data-i18n="zoos.title1">live panda cams</h1>
             <a href="https://www.youtube.com/watch?v=yYp_Shk7XcI" target="_blank">
                 <img src="../assets/images/Panda_cam.png" alt="Panda Cam">
             </a>
             <div class="more_cams">
-                <h2>more live views </h2>
+                <h2 data-i18n="zoos.title2">more live views</h2>
                 <div class="more_cams_carousel">
                     <img src="../assets/icons/Left.svg" alt="Left Arrow">
                     <div class="more_cams_imgs">
@@ -99,14 +103,15 @@
         <section class="quick_donate">
             <div class="quick_donate_info">
                 <div>
-                    <h3>Your donation makes a difference!</h3>
-                    <p>The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch
+                    <h3 data-i18n="quick_donate.title1">Your donation makes a difference!</h3>
+                    <p data-i18n="quick_donate.description">The Online Zoo's animal webcams are some of the most famous
+                        on the internet. Tune in to watch
                         your favourite animals — live, 24/7!</p>
                 </div>
                 <div>
-                    <h4>Quick Donate</h4>
+                    <h4 data-i18n="quick_donate.title2">Quick Donate</h4>
                     <button onclick="openDonationPopup2()">
-                        <div class="btn_text">$ Donation Amount</div>
+                        <div class="btn_text" data-i18n="quick_donate.button">$ Donation Amount</div>
                         <div class="arrow"><img src="../assets/icons/Arrow.svg" alt="Arrow"></div>
                     </button>
 
@@ -228,8 +233,9 @@
 
         <section class="information">
             <div class="did_you_know">
-                <h2>did you know?</h2>
-                <p>Pandas are often seen eating in a relaxed sitting posture, with their hind legs stretched out before
+                <h2 data-i18n="zoos.title3">did you know?</h2>
+                <p data-i18n="zoos.description">Pandas are often seen eating in a relaxed sitting posture, with their
+                    hind legs stretched out before
                     them. They may appear sedentary, but they are skilled tree-climbers and efficient swimmers.</p>
             </div>
             <div>
@@ -245,7 +251,8 @@
                     </div>
                     <img src="../assets/images/Did_you_know_panda.png" alt="Panda">
                 </div>
-                <h4>Giant pandas are very unusual animals that eat almost exclusively bamboo, which is very low in
+                <h4 data-i18n="zoos.info">Giant pandas are very unusual animals that eat almost exclusively bamboo,
+                    which is very low in
                     nutrients. Because of this, they have many unique adaptations for their low-energy lifestyle. Giant
                     pandas are solitary. They have a highly developed sense of smell that males use to avoid each other
                     and to find females for mating in the spring. After a five-month pregnancy, females give birth to a
@@ -269,14 +276,14 @@
                 </div>
                 <nav>
                     <ul class="nav">
-                        <li><a href="../index.html">About</a></li>
-                        <li><a href="./map.html">Map</a></li>
-                        <li><a href="./zoos_page_panda.html">Zoos</a></li>
-                        <li><a href="./contact_us.html">Contact us</a></li>
+                        <li><a href="../index.html" data-i18n="nav.about">About</a></li>
+                        <li><a href="./map.html" data-i18n="nav.map">Map</a></li>
+                        <li><a href="./zoos_page_panda.html" data-i18n="nav.zoos">Zoos</a></li>
+                        <li><a href="./contact_us.html" data-i18n="nav.contact">Contact us</a></li>
                     </ul>
                 </nav>
-                <button onclick="openDonationPopup1()">donate for volunteers<svg width="25" height="22"
-                        viewBox="0 0 25 22" xmlns="http://www.w3.org/2000/svg">
+                <button onclick="openDonationPopup1()"><span data-i18n="footer.button">donate for volunteers</span><svg
+                        width="25" height="22" viewBox="0 0 25 22" xmlns="http://www.w3.org/2000/svg">
                         <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
                             d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z" />
                     </svg>
@@ -320,7 +327,7 @@
         </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script type="module" src="../dist/language/switcher.js"></script>
 </body>
 
 </html>

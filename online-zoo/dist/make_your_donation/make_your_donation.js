@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { t } from "../language/switcher.js";
 const donateBtn = document.getElementById("donateBtn");
 const donationPopup2 = document.getElementById("donationPopup2");
 function openDonationPopup2() {
@@ -31,7 +32,7 @@ function fetchPets() {
         catch (error) {
             console.error(error);
             const option = document.createElement("option");
-            option.textContent = "Something went wrong. Refresh the page!";
+            option.textContent = t("errors.fetchError");
             petsSelect.appendChild(option);
         }
     });
@@ -389,7 +390,8 @@ completeDonationBtn.addEventListener('click', () => __awaiter(void 0, void 0, vo
     }
     catch (error) {
         console.error(error);
-        alert('Something went wrong. Please, try again later.');
+        alert(t("errors.alertError"));
+        window.location.href = 'index.html';
     }
 }));
 //back buttons ---------------------------------------------------------------------------------------------
@@ -403,5 +405,4 @@ step3BackBtn.addEventListener('click', () => {
     step3.classList.remove('active');
     step2.classList.add('active');
 });
-export {};
 //# sourceMappingURL=make_your_donation.js.map

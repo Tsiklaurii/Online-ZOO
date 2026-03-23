@@ -903,6 +903,23 @@ header .networks .user .user_icon .user_name {
   font-size: 20px;
   font-weight: 600;
 }
+header .lang_switcher {
+  display: flex;
+  gap: 8px;
+}
+header .lang_switcher .lang_btn {
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  font-weight: 600;
+  opacity: 0.5;
+  font-size: 20px;
+}
+header .lang_switcher .lang_btn.active {
+  opacity: 1;
+  border-bottom: 3px solid black;
+}
 @media (max-width: 1400px) {
   header .container {
     gap: 163px;

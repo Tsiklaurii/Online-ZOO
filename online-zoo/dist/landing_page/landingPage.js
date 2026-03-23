@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { t } from "../language/switcher.js";
 const petImages = {
     1: './assets/images/Panda.png',
     2: './assets/images/Lemur.png',
@@ -55,7 +56,7 @@ function fetchPets() {
         }
         catch (error) {
             console.error(error);
-            petsFetchError.textContent = 'Something went wrong. Please, refresh the page!';
+            petsFetchError.textContent = t("errors.fetchError");
             petsBtns.style.display = 'none';
         }
     });
@@ -109,7 +110,7 @@ function fetchFeedback() {
         }
         catch (error) {
             console.error(error);
-            feedbackFetchError.textContent = 'Something went wrong. Please, refresh the page!';
+            feedbackFetchError.textContent = t("errors.fetchError");
             feedbackBtns.style.display = 'none';
         }
     });
@@ -177,5 +178,4 @@ closeDonationPopup1.addEventListener('click', () => {
     popup.classList.remove("active");
     document.body.classList.remove("no_scroll");
 });
-export {};
 //# sourceMappingURL=landingPage.js.map

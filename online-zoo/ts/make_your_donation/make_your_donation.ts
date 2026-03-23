@@ -1,3 +1,5 @@
+import { t } from "../language/switcher.js";
+
 interface User {
     name: string
     email: string
@@ -40,7 +42,7 @@ async function fetchPets(): Promise<void> {
     } catch (error) {
         console.error(error)
         const option = document.createElement("option")
-        option.textContent = "Something went wrong. Refresh the page!"
+        option.textContent = t("errors.fetchError")
         petsSelect.appendChild(option)
     }
 }
@@ -452,7 +454,8 @@ completeDonationBtn.addEventListener('click', async () => {
         window.location.href = 'index.html'
     } catch (error) {
         console.error(error)
-        alert('Something went wrong. Please, try again later.')
+        alert(t("errors.alertError"))
+        window.location.href = 'index.html'
     }
 })
 

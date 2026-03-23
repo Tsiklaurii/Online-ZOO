@@ -124,6 +124,26 @@ header {
         }
     }
 
+    .lang_switcher {
+        display: flex;
+        gap: 8px;
+
+        .lang_btn {
+            padding: 6px 10px;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+            font-weight: 600;
+            opacity: 0.5;
+            font-size: 20px;
+
+            &.active {
+                opacity: 1;
+                border-bottom: 3px solid black;
+            }
+        }
+    }
+
     @include responsive(lg) {
         .container {
             gap: 163px;
