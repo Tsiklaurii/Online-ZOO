@@ -1,0 +1,544 @@
+.donation_popup_2 {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: $bg_blur;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    overflow-y: auto;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .popup_content {
+        background: $footer_color;
+        border-radius: 5px;
+        width: 920px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        @include responsive(md) {
+            width: 600px;
+        }
+
+        @include responsive(sm) {
+            width: 300px;
+            padding-bottom: 50px;
+        }
+
+        .title {
+            background-color: $header_bg;
+            width: 100%;
+            text-align: center;
+            padding: 42px 0px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+
+            @include responsive(md) {
+                padding: 24px 0px;
+            }
+
+            h2 {
+                text-transform: uppercase;
+                font-size: 42px;
+                color: $footer_color;
+                font-weight: 500;
+
+                @include responsive(sm) {
+                    font-size: 26px;
+                }
+            }
+        }
+
+        .form_step {
+            display: none;
+            width: 100%;
+
+            .form_info {
+                border-bottom: 1px solid $pop_up_border;
+                width: 100%;
+                padding: 50px 0px 10px 120px;
+
+                @include responsive(md) {
+                    padding: 50px 0px 10px 77px;
+                }
+
+                @include responsive(sm) {
+                    padding: 20px 0px;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                p {
+                    color: $header_nav;
+                    font-size: 18px;
+                    line-height: 150%;
+                    font-weight: 600;
+
+                    @include responsive(md) {
+                        text-align: start;
+                    }
+
+                    @include responsive(sm) {
+                        width: 207px;
+                    }
+                }
+            }
+
+            .inputs {
+                padding: 40px 120px 50px;
+                width: 680px;
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                width: 100%;
+
+                .save_card {
+                    display: flex;
+                    gap: 15px;
+                    font-size: 30px;
+                    margin-bottom: 10px;
+
+                    input {
+                        width: 20px;
+                        cursor: pointer;
+                    }
+                }
+
+                .saved_cards_select {
+                    font-size: 20px;
+                    cursor: pointer;
+                    padding: 5px;
+                    margin-bottom: 10px;
+                }
+
+                @include responsive(md) {
+                    padding: 40px 77px;
+                }
+
+                @include responsive(sm) {
+                    padding: 0;
+                }
+
+                label {
+                    font-size: 18px;
+
+                    @include responsive(md) {
+                        text-align: start;
+                    }
+
+                    @include responsive(sm) {
+                        text-align: center;
+                        padding: 30px 43px 0px;
+                    }
+                }
+
+                span {
+                    color: $active_nav;
+                }
+
+                .amount_buttons {
+                    display: flex;
+                    gap: 40px;
+
+                    @include responsive(md) {
+                        flex-wrap: wrap;
+                        width: 446px;
+                        gap: 25px;
+                        justify-content: space-between;
+                    }
+
+                    @include responsive(sm) {
+                        width: 280px;
+                        margin: auto;
+                        gap: 0;
+                    }
+
+                    .amount_btn {
+                        padding: 21.5px 22px;
+                        background-color: rgba($active_nav, 0.5);
+                        transition: ease 0.3s;
+                        border: none;
+                        border-radius: 5px;
+                        color: $footer_color;
+                        font-size: 18px;
+                        cursor: pointer;
+
+                        @include responsive(md) {
+                            width: 130px;
+                            margin: 0;
+                        }
+
+                        @include responsive(sm) {
+                            height: 50px;
+                            margin-bottom: 10px;
+                        }
+
+                        &:hover {
+                            background-color: $active_nav;
+                        }
+
+                        &.active {
+                            background: $active_nav;
+                        }
+                    }
+                }
+
+                .other_amount {
+                    display: flex;
+                    gap: 40px;
+
+                    @include responsive(sm) {
+                        gap: 20px;
+                        margin: auto;
+                    }
+
+                    div {
+                        padding: 26px 45px;
+                        border-radius: 5px;
+                        background-color: $active_nav;
+                        color: $footer_color;
+                        font-size: 18px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+
+                        @include responsive(md) {
+                            padding: 21px 24px;
+                        }
+
+                        @include responsive(sm) {
+                            width: 130px;
+                            padding: 5px 0px;
+                        }
+                    }
+
+                    input {
+                        border-radius: 5px;
+                        width: 200px;
+                        font-size: 18px;
+                        padding: 10px;
+
+                        @include responsive(sm) {
+                            width: 130px;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+
+                .special_pet {
+                    display: flex;
+                    gap: 40px;
+
+                    @include responsive(md) {
+                        flex-direction: column;
+                    }
+
+                    @include responsive(sm) {
+                        align-items: center;
+                        gap: 20px;
+                    }
+
+                    div {
+                        padding: 26px 41px;
+                        border-radius: 5px;
+                        background-color: $active_nav;
+                        color: $footer_color;
+                        font-size: 18px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+
+                        @include responsive(md) {
+                            padding: 21px 21px;
+                            width: 211px;
+                        }
+                    }
+
+                    select {
+                        width: 390px;
+                        border-radius: 5px;
+                        font-size: 18px;
+                        text-align: center;
+                        color: rgb($header_nav, 0.7);
+                        cursor: pointer;
+
+                        @include responsive(md) {
+                            padding: 21px 21px;
+                            width: 100%;
+                        }
+
+                        @include responsive(sm) {
+                            width: 280px;
+                        }
+
+                        option {
+                            text-align: start;
+                        }
+                    }
+                }
+
+                .monthly_gift {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    margin-bottom: 50px;
+
+                    @include responsive(sm) {
+                        flex-direction: column;
+                        margin: 0;
+                    }
+
+                    label {
+                        @include responsive(sm) {
+                            text-align: center;
+                        }
+                    }
+
+                    .monthly_gift_box {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                button {
+                    margin: auto;
+                    width: 200px;
+                    height: 74px;
+                    background-color: $auth_disabled;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    transition: ease 0.3s;
+                    border: none;
+                    border-radius: 5px;
+                    color: $footer_color;
+                    font-size: 18px;
+                    transition: background-color 0.3s;
+                    cursor: not-allowed;
+
+                    &:hover {
+                        background-color: $auth_disabled;
+                    }
+
+                    &:enabled {
+                        background-color: $active_nav;
+
+                        &:hover {
+                            background-color: $turquoise_btn_hover;
+                            cursor: pointer;
+                        }
+                    }
+
+                    img {
+                        width: 24px;
+                        height: 22px;
+                    }
+                }
+
+                .billing_inputs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
+
+                    @include responsive(sm) {
+                        padding: 30px 0px 0px;
+                        margin: auto;
+                        width: 280px;
+                        gap: 30px;
+                    }
+
+                    div {
+                        @include responsive(md) {
+                            text-align: start;
+                        }
+
+                        label {
+                            @include responsive(md) {
+                                padding: 0;
+                            }
+                        }
+
+                        input {
+                            display: flex;
+                            padding: 17px 20px 16px;
+                            margin: 10px 0px;
+                            width: 100%;
+                            font-size: 18px;
+                            outline: none;
+
+                            &:active {
+                                outline: none;
+                            }
+                        }
+
+                        p {
+                            color: rgba($header_nav, 0.7);
+                            font-size: 18px;
+                            width: 100%;
+
+                            @include responsive(sm) {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .payment_inputs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
+
+                    @include responsive (sm) {
+                        width: 280px;
+                        margin: auto;
+                        gap: 0;
+                    }
+
+                    .card_info {
+                        display: flex;
+                        justify-content: space-between;
+
+                        @include responsive(md) {
+                            flex-direction: column;
+                            gap: 20px;
+                        }
+
+                        @include responsive(sm) {
+                            gap: 0;
+                        }
+
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            label {
+                                @include responsive(sm) {
+                                    text-align: start;
+                                    padding: 30px 0px 0px;
+                                }
+                            }
+
+                            #card {
+                                width: 442px;
+                                height: 65px;
+                                border-radius: 5px;
+                                outline: none;
+                                font-size: 18px;
+                                padding: 0px 20px;
+
+                                @include responsive(sm) {
+                                    width: 280px;
+                                }
+                            }
+
+                            #cvv {
+                                width: 198px;
+                                height: 65px;
+                                border-radius: 5px;
+                                outline: none;
+                                font-size: 18px;
+                                padding: 0px 20px;
+
+                                @include responsive(sm) {
+                                    width: 280px;
+                                }
+                            }
+                        }
+                    }
+
+                    .date {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        margin-bottom: 10px;
+
+                        label {
+                            @include responsive(sm) {
+                                text-align: start;
+                                padding: 30px 0px 0px;
+                            }
+                        }
+
+                        @include responsive(md) {
+                            margin-bottom: 0;
+                        }
+
+                        #date {
+                            display: flex;
+                            gap: 40px;
+
+                            input {
+                                width: 201px;
+                                height: 65px;
+                                font-size: 18px;
+                                text-align: center;
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+
+                    @include responsive(md) {
+                        flex-direction: column;
+                        gap: 20px;
+                    }
+
+                    .back {
+                        background-color: inherit;
+                        color: $active_nav;
+                        text-transform: none;
+                        font-weight: 600;
+
+                        &:hover {
+                            background-color: inherit;
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .complete {
+                        width: auto;
+                        padding: 0px 55px;
+                        cursor: not-allowed;
+
+                        &:hover {
+                            background-color: $auth_disabled;
+                        }
+
+                        &:enabled {
+                            background-color: $header_bg;
+
+                            &:hover {
+                                background-color: $orange_btn_hover;
+                                cursor: pointer;
+                            }
+                        }
+
+                        @include responsive(sm) {
+                            padding: 0;
+                            width: 280px;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

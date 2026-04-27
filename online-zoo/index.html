@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online ZOO</title>
+    <link rel="stylesheet" href="styles/css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo"><img src="./assets/icons/Logo.svg" alt="Logo"></a>
+            <div class="menu">
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html" data-i18n="nav.about" class="active">About</a></li>
+                        <li><a href="./pages/map.html" data-i18n="nav.map">Map</a></li>
+                        <li><a href="./pages/zoos_page_panda.html" data-i18n="nav.zoos">Zoos</a></li>
+                        <li><a href="./pages/contact_us.html" data-i18n="nav.contact">Contact us</a></li>
+                        <li><a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=21-4877&t=DSve9ApAfrSFVRN4-0"
+                                target="_blank" data-i18n="nav.design">Design</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="networks">
+                    <a href="https://www.youtube.com/@RSSchool"><img src="./assets/icons/YouTube.svg" alt="YouTube"></a>
+                    <a href="https://www.instagram.com/rsschool_en?igsh=em1janI5bzZ0dXlx"><img
+                            src="./assets/icons/Instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/rsschoolEN"><img src="./assets/icons/Facebook.svg"
+                            alt="Facebook"></a>
+                    <div class="user">
+                        <button class="user_icon" id="userIcon">
+                            <img src="./assets/icons/User.svg" alt="User">
+                            <span id="userName" class="user_name"></span>
+                        </button>
+                        <div class="user_popup hidden" id="userPopup"></div>
+                    </div>
+                </div>
+                <div class="lang_switcher">
+                    <button id="langEn" class="lang_btn active">EN</button>
+                    <button id="langKa" class="lang_btn">KA</button>
+                </div>
+            </div>
+            <button class="hamburger"><img src="./assets/icons/Hamburger.svg" alt="Hamburger"></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="main_page">
+            <div>
+                <h1 data-i18n="main_page.title">Watch your favorite animal online</h1>
+                <p data-i18n="main_page.description">Explore the exciting and mysterious world of wild animals in a
+                    natural setting without leaving your
+                    home.</p>
+                <button data-i18n="main_page.button">View Live Cam<img src="./assets/icons/Arrow.svg"
+                        alt="Arrow"></button>
+            </div>
+        </section>
+
+        <section class="how_it_works">
+            <div class="how_it_works_info1">
+                <div>
+                    <h2 data-i18n="how_it_works.title1">Welcome to the Online Zoo!</h2>
+                    <p data-i18n="how_it_works.description1">On our website, using live webcams, fans of all ages can
+                        observe various animals. Among them, are
+                        Giant pandas, eagles, alligators, forest gorillas, African lions, and others. It is the whole
+                        natural world in real-time in front of our cameras. We hope you will enjoy watching closely and
+                        explore animals' behavior and habitats! Note: animals are not always on view on cameras, so
+                        please check back if you don't see anything.</p>
+                </div>
+                <img src="./assets/images/Welcome.png" alt="Welcome">
+            </div>
+            <div class="how_it_works_info2">
+                <img src="./assets/images/How_we_work.png" alt="How We Work">
+                <div>
+                    <h2 data-i18n="how_it_works.title2">How we work</h2>
+                    <p data-i18n="how_it_works.description2">Online Zoo is a nonprofit committed to inspiring awareness
+                        and preservation of nature and wild
+                        animals in our zoo and worldwide. Every day, our experts work to safeguard the health and
+                        wellness of the animals. To continue these efforts, we need your help. We're so grateful to our
+                        numerous supporters. All donations, large and small, go a long way to the conservation efforts
+                        of our pets.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick_donate">
+            <div class="quick_donate_info">
+                <div>
+                    <h3 data-i18n="quick_donate.title1">Your donation makes a difference!</h3>
+                    <p data-i18n="quick_donate.description">The Online Zoo's animal webcams are some of the most famous
+                        on the internet. Tune in to watch
+                        your favourite animals — live, 24/7!</p>
+                </div>
+                <div>
+                    <h4 data-i18n="quick_donate.title2">Quick Donate</h4>
+                    <button id="donateBtn">
+                        <div class="btn_text" data-i18n="quick_donate.button">$ Donation Amount</div>
+                        <div class="arrow"><img src="./assets/icons/Arrow.svg" alt="Arrow"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="meet_pets">
+            <div class="meet_pets_info">
+                <h2 data-i18n="meet_pets.title">meet some our Pets</h2>
+                <p class="info" data-i18n="meet_pets.description">Do you have a special place in your heart for animals?
+                    Who are your favorites? Perhaps
+                    you'd
+                    like to donate to special ones or all our pets? We think it's important for you to choose how your
+                    donation is used.</p>
+                <div class="btns" id="petsBtns">
+                    <button id="prevBtn">
+                        <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.0724 0.119971C11.2545 0.199174 11.42 0.315255 11.5593 0.461565C11.6989 0.607505 11.8097 0.780876 11.8853 0.971748C11.9609 1.16262 11.9998 1.36724 11.9998 1.57389C11.9998 1.78055 11.9609 1.98517 11.8853 2.17604C11.8097 2.36691 11.6989 2.54028 11.5593 2.68622L5.53159 9H22.6822C23.1066 9 23.5135 9.21071 23.8136 9.58579C24.1137 9.96086 24.2822 10.4696 24.2822 11C24.2822 11.5304 24.1137 12.0391 23.8136 12.4142C23.5135 12.7893 23.1066 13 22.6822 13H5.53081L11.5593 19.3146C11.8408 19.6096 11.999 20.0097 11.999 20.4269C11.999 20.8441 11.8408 21.2443 11.5593 21.5393C11.2777 21.8343 10.8959 22 10.4978 22C10.0996 22 9.71776 21.8343 9.43622 21.5393L0.440245 12.1127C0.300617 11.9668 0.189838 11.7934 0.114252 11.6026C0.0386677 11.4117 -0.000240326 11.2071 -0.000240326 11.0004C-0.000240326 10.7938 0.0386677 10.5891 0.114252 10.3983C0.189838 10.2074 0.300617 10.034 0.440245 9.88808L9.43622 0.461565C9.5755 0.315255 9.74095 0.199174 9.92311 0.119971C10.1053 0.0407677 10.3005 0 10.4978 0C10.695 0 10.8902 0.0407677 11.0724 0.119971Z"
+                                fill="#20113D" />
+                        </svg>
+                    </button>
+                    <button id="nextBtn">
+                        <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                                fill="#20113D" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="pets_wrapper">
+                <div class="loader" id="petsLoader">
+                    <svg width="200" height="200" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="blue">
+                        <g fill="none" fillRule="evenodd">
+                            <g transform="translate(1 1)" strokeWidth="2">
+                                <circle stroke="#d3d3d3" cx="18" cy="18" r="18" />
+                                <path d="M36 18c0-9.94-8.06-18-18-18">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 18 18"
+                                        to="360 18 18" dur="1s" repeatCount="indefinite" />
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="pets_error" id="petsError"></div>
+                <div class="pets_container" id="petsContainer"></div>
+            </div>
+            <a href="./pages/zoos_page_panda.html">
+                <button class="favorite_btn"><span data-i18n="meet_pets.button">choose your favourite</span>
+                    <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                            fill="#20113D" />
+                    </svg>
+                </button>
+            </a>
+        </section>
+
+        <section class="feedback">
+            <div class="feedback_info">
+                <div class="feedback_title">
+                    <h2 data-i18n="feedback.title">what our users think</h2>
+                    <p data-i18n="feedback.description">We are continuously striving to improve the experiences of our
+                        future guests. Below you can leave
+                        your own feedback, or simply view feedback from past clients.</p>
+                </div>
+                <div class="feedback_wrapper">
+                    <div class="loader" id="feedbackLoader">
+                        <svg width="200" height="200" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"
+                            stroke="blue">
+                            <g fill="none" fillRule="evenodd">
+                                <g transform="translate(1 1)" strokeWidth="2">
+                                    <circle stroke="#d3d3d3" cx="18" cy="18" r="18" />
+                                    <path d="M36 18c0-9.94-8.06-18-18-18">
+                                        <animateTransform attributeName="transform" type="rotate" from="0 18 18"
+                                            to="360 18 18" dur="1s" repeatCount="indefinite" />
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="feedback_fetch_error" id="feedbackFetchError"></div>
+                    <div class="feedback_container" id="feedbackContainer"></div>
+                    <div class="btns" id="feedbackBtns">
+                        <button id="feedbackPrevBtn">
+                            <svg width="25" height="22" viewBox="0 0 25 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill="white" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.0724 0.119971C11.2545 0.199174 11.42 0.315255 11.5593 0.461565C11.6989 0.607505 11.8097 0.780876 11.8853 0.971748C11.9609 1.16262 11.9998 1.36724 11.9998 1.57389C11.9998 1.78055 11.9609 1.98517 11.8853 2.17604C11.8097 2.36691 11.6989 2.54028 11.5593 2.68622L5.53159 9H22.6822C23.1066 9 23.5135 9.21071 23.8136 9.58579C24.1137 9.96086 24.2822 10.4696 24.2822 11C24.2822 11.5304 24.1137 12.0391 23.8136 12.4142C23.5135 12.7893 23.1066 13 22.6822 13H5.53081L11.5593 19.3146C11.8408 19.6096 11.999 20.0097 11.999 20.4269C11.999 20.8441 11.8408 21.2443 11.5593 21.5393C11.2777 21.8343 10.8959 22 10.4978 22C10.0996 22 9.71776 21.8343 9.43622 21.5393L0.440245 12.1127C0.300617 11.9668 0.189838 11.7934 0.114252 11.6026C0.0386677 11.4117 -0.000240326 11.2071 -0.000240326 11.0004C-0.000240326 10.7938 0.0386677 10.5891 0.114252 10.3983C0.189838 10.2074 0.300617 10.034 0.440245 9.88808L9.43622 0.461565C9.5755 0.315255 9.74095 0.199174 9.92311 0.119971C10.1053 0.0407677 10.3005 0 10.4978 0C10.695 0 10.8902 0.0407677 11.0724 0.119971Z"
+                                    fill="#20113D" />
+                            </svg>
+                        </button>
+                        <button id="feedbackNextBtn">
+                            <svg width="25" height="22" viewBox="0 0 25 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill="white" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                                    fill="#20113D" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button class="leave_feedback_btn"><span data-i18n="feedback.button">leave feedback</span> <img
+                    src="./assets/icons/Arrow.svg" alt="Arrow"></button>
+        </section>
+    </main>
+
+    <div id="donationPopup2" class="donation_popup_2">
+        <div class="popup_content">
+            <div class="title">
+                <h2 data-i18n="donation_popup.title">make your donation</h2>
+            </div>
+            <form class="form_step active" id="step1">
+                <div class="form_info">
+                    <p data-i18n="donation_popup.info">Donation Information:</p>
+                </div>
+                <div class="inputs">
+                    <label for="otherAmount" data-i18n="donation_popup.amount"><span>* </span>Choose your donation
+                        amount:</label>
+                    <div class="amount_buttons">
+                        <button type="button" class="amount_btn" data-amount="10">$10</button>
+                        <button type="button" class="amount_btn" data-amount="20">$20</button>
+                        <button type="button" class="amount_btn" data-amount="30">$30</button>
+                        <button type="button" class="amount_btn" data-amount="50">$50</button>
+                        <button type="button" class="amount_btn" data-amount="80">$80</button>
+                        <button type="button" class="amount_btn" data-amount="100">$100</button>
+                    </div>
+                    <div class="other_amount">
+                        <div data-i18n="donation_popup.other_amount">Other Amount</div>
+                        <input type="text" id="otherAmount">
+                    </div>
+                    <div class="special_pet">
+                        <div data-i18n="donation_popup.special">for special pet</div>
+                        <select id="pets" name="pets" placeholder="Choose your favourite">
+                            <option value="" data-i18n="donation_popup.favorite">Choose your favourite</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="monthly_gift">
+                            <input class="monthly_gift_box" type="checkbox" id="monthly_gift" name="monthly_gift"
+                                value="monthly_gift">
+                            <label for="monthly_gift" data-i18n="donation_popup.gift"> Make this a monthly recurring
+                                gift</label><br>
+                        </div>
+                        <button type="button" id="step1NextBtn" disabled data-i18n="donation_popup.next_button">Next<img
+                                src="./assets/icons/Arrow.svg" alt="Arrow"></button>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form_step" id="step2">
+                <div class="form_info">
+                    <p data-i18n="donation_popup.billing">Billing Information:</p>
+                </div>
+                <div class="inputs">
+                    <div class="billing_inputs">
+                        <div>
+                            <label for="fullName" data-i18n="donation_popup.name"><span>* </span>Your Name</label>
+                            <input type="text" id="fullName" placeholder="First and last name" required>
+                        </div>
+                        <div>
+                            <label for="email" data-i18n="donation_popup.email"><span>* </span>Your Email
+                                Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" autocomplete="email" required>
+                            <p data-i18n="donation_popup.terms">You will receive emails from the Online Zoo, including
+                                updates and news
+                                on the latest discoveries and translations. You can unsubscribe at any
+                                time.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <button class="back" type="button" id="step2BackBtn"
+                            data-i18n="donation_popup.back_button">Back</button>
+                        <button type="button" id="step2NextBtn" disabled data-i18n="donation_popup.next_button">Next<img
+                                src="./assets/icons/Arrow.svg" alt="Arrow"></button>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form_step" id="step3">
+                <div class="form_info">
+                    <p data-i18n="donation_popup.payment">Payment Information:</p>
+                </div>
+                <div class="inputs">
+                    <div class="payment_inputs">
+                        <div class="card_info">
+                            <div>
+                                <label for="card" data-i18n="donation_popup.card_num"><span>* </span>Credit Card
+                                    Number</label>
+                                <input type="text" id="card" required>
+                            </div>
+                            <div>
+                                <label for="cvv" data-i18n="donation_popup.cvv"><span>* </span>CVV Number</label>
+                                <input type="text" id="cvv" required>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <label for="month" data-i18n="donation_popup.date"><span>* </span>Expiration Date</label>
+                            <div id="date">
+                                <input type="text" id="month" placeholder="Month" min="1" max="12">
+                                <input type="text" id="year" placeholder="Year" min="2024" max="2040">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="saveCardContainer" class="save_card"></div>
+
+                    <div class="buttons">
+                        <button class="back" type="button" id="step3BackBtn"
+                            data-i18n="donation_popup.back_button">Back</button>
+                        <button class="complete" type="button" id="completeDonation" disabled
+                            data-i18n="donation_popup.complete">Complete
+                            Donation</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer_nav">
+                <div class="footer_logos">
+                    <a href="index.html"><img src="./assets/icons/Logo_white.svg" alt="Footer Logo"></a>
+                    <a href="https://www.yemdigital.com/"><img src="./assets/icons/Yem_Digital.svg"
+                            alt="Yem Digital Logo"></a>
+                    <a href="https://rs.school/courses/short-track"><img src="./assets/icons/Rs_school_js_logo.svg"
+                            alt="Rs School Logo"></a>
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html" data-i18n="nav.about">About</a></li>
+                        <li><a href="./pages/map.html" data-i18n="nav.map">Map</a></li>
+                        <li><a href="./pages/zoos_page_panda.html" data-i18n="nav.zoos">Zoos</a></li>
+                        <li><a href="./pages/contact_us.html" data-i18n="nav.contact">Contact us</a></li>
+                    </ul>
+                </nav>
+                <button id="openDonationPopup1"><span data-i18n="footer.button">donate for volunteers</span><svg width="25" height="22" viewBox="0 0 25 22"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z" />
+                    </svg>
+                </button>
+
+                <div id="donationPopup1" class="donation_popup_1">
+                    <div class="popup_content">
+                        <img class="close_popup" id="closeDonationPopup1" src="./assets/icons/Close_popup.svg"
+                            alt="Close Pop Up">
+                        <img src="./assets/images/Donation_popup_1.png" alt="Donation Pop Up">
+                        <h2 data-i18n="footer_popup.title">together we care, save and protect!</h2>
+                        <p data-i18n="footer_popup.description">Your most generous gift not only cares for countless animals, but it also offers hope and a
+                            vital lifeline to the world's most endangered wildlife relying on us to survive.</p>
+                        <div>
+                            <button class="btn">$20</button>
+                            <button class="btn">$30</button>
+                            <button class="btn">$50</button>
+                            <button class="btn">$80</button>
+                            <button class="btn">$100</button>
+                            <button class="btn" data-i18n="footer_popup.button">Other amount</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer_soc_networks">
+                <div class="copyright">
+                    <p>© 2021 DinaK</p>
+                    <p>© Yem Digital</p>
+                    <p>© RSSchool</p>
+                </div>
+                <div class="soc_networks">
+                    <a href="https://www.youtube.com/@RSSchool"><img src="./assets/icons/YouTube.svg" alt="YouTube"></a>
+                    <a href="https://www.instagram.com/rsschool_en?igsh=em1janI5bzZ0dXlx"><img
+                            src="./assets/icons/Instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/rsschoolEN"><img src="./assets/icons/Facebook.svg"
+                            alt="Facebook"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="dist/language/switcher.js"></script>
+    <script type="module" src="dist/landing_page/landingPage.js"></script>
+    <script type="module" src="dist/auth/auth.js"></script>
+    <script type="module" src="dist/make_your_donation/make_your_donation.js"></script>
+</body>
+
+</html>

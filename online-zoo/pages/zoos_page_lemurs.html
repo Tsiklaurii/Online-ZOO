@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemurs</title>
+    <link rel="stylesheet" href="../styles/css/global.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html" class="logo"><img src="../assets/icons/Logo.svg" alt="Logo"></a>
+            <div class="menu">
+                <nav>
+                    <ul class="nav">
+                        <li><a href="../index.html">About</a></li>
+                        <li><a href="map.html">Map</a></li>
+                        <li><a href="zoos_page_panda.html" class="active">Zoos</a></li>
+                        <li><a href="./contact_us.html">Contact us</a></li>
+                        <li><a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=21-4877&t=DSve9ApAfrSFVRN4-0"
+                                target="_blank">Design</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="networks">
+                    <a href="https://www.youtube.com/@RSSchool"><img src="../assets/icons/YouTube.svg"
+                            alt="YouTube"></a>
+                    <a href="https://www.instagram.com/rsschool_en?igsh=em1janI5bzZ0dXlx"><img
+                            src="../assets/icons/Instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/rsschoolEN"><img src="../assets/icons/Facebook.svg"
+                            alt="Facebook"></a>
+                </div>
+            </div>
+            <button class="hamburger"><img src="../assets/icons/Hamburger.svg" alt="Hamburger"></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="side_panel">
+            <div class="expand1">
+                <div>
+                    <h3>Live</h3>
+                    <img src="../assets/icons/Live_vector.svg" alt="Live">
+                </div>
+                <img class="expand_arrows" src="../assets/icons/Expand_arrows.svg" alt="Expand arrows">
+            </div>
+            <a href="zoos_page_panda.html">
+                <div>
+                    <div class="circle"><img src="../assets/icons/Panda_vector.svg" alt="Panda vector"></div>
+                </div>
+            </a>
+            <a href="zoos_page_eagles.html">
+                <div>
+                    <div class="circle"><img src="../assets/icons/Eagle_vector.svg" alt="Eagle vector"></div>
+                </div>
+            </a>
+            <a href="zoos_page_gorillas.html">
+                <div>
+                    <div class="circle"><img src="../assets/icons/Gorilla_vector.svg" alt="Gorilla vector"></div>
+                </div>
+            </a>
+            <a href="zoos_page_lemurs.html">
+                <div>
+                    <div class="circle"><img src="../assets/icons/Lemur_vector.svg" alt="Lemur vector"></div>
+                </div>
+            </a>
+            <div class="expand2">
+                <img src="../assets/icons/Expand_arrow.svg" alt="Expand arrow">
+            </div>
+        </div>
+
+        <section class="live_cams">
+            <h1>lemurs cams</h1>
+            <a href="https://www.youtube.com/watch?v=jcjDrE1ye-E" target="_blank">
+                <img src="../assets/images/Lemurs_cam.png" alt="Lemurs Cam">
+            </a>
+            <div class="more_cams">
+                <h2>more live views </h2>
+                <div class="more_cams_carousel">
+                    <img src="../assets/icons/Left.svg" alt="Left Arrow">
+                    <div class="more_cams_imgs">
+                        <a href="https://www.youtube.com/watch?v=jcjDrE1ye-E" target="_blank">
+                            <img src="../assets/images/Lemurs_cam_1.png" alt="Lemur Cam 1">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=jcjDrE1ye-E" target="_blank">
+                            <img src="../assets/images/Lemurs_cam_2.png" alt="Lemur Cam 2">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=jcjDrE1ye-E" target="_blank">
+                            <img src="../assets/images/Lemurs_cam_3.png" alt="Lemur Cam 3">
+                        </a>
+                    </div>
+                    <img src="../assets/icons/Right.svg" alt="Right Arrow">
+                </div>
+            </div>
+        </section>
+
+        <section class="quick_donate">
+            <div class="quick_donate_info">
+                <div>
+                    <h3>Your donation makes a difference!</h3>
+                    <p>The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch
+                        your favourite animals — live, 24/7!</p>
+                </div>
+                <div>
+                    <h4>Quick Donate</h4>
+                    <button onclick="openDonationPopup2()">
+                        <div class="btn_text">$ Donation Amount</div>
+                        <div class="arrow"><img src="../assets/icons/Arrow.svg" alt="Arrow"></div>
+                    </button>
+
+                    <div id="donationPopup2" class="donation_popup_2">
+                        <div class="popup_content">
+                            <div class="title">
+                                <h2>make your donation</h2>
+                            </div>
+                            <form class="form_step active" id="step1">
+                                <div class="form_info">
+                                    <p>Donation Information:</p>
+                                </div>
+                                <div class="inputs">
+                                    <label for="otherAmount"><span>* </span>Choose your donation amount:</label>
+                                    <div class="amount_buttons">
+                                        <button type="button" class="amount_btn" data-amount="10">$10</button>
+                                        <button type="button" class="amount_btn" data-amount="20">$20</button>
+                                        <button type="button" class="amount_btn" data-amount="30">$30</button>
+                                        <button type="button" class="amount_btn" data-amount="50">$50</button>
+                                        <button type="button" class="amount_btn" data-amount="80">$80</button>
+                                        <button type="button" class="amount_btn" data-amount="100">$100</button>
+                                    </div>
+                                    <div class="other_amount">
+                                        <div>Other Amount</div>
+                                        <input type="number" id="otherAmount">
+                                    </div>
+                                    <div class="special_pet">
+                                        <div>for special pet</div>
+                                        <select id="pets" name="pets" placeholder="Choose your favourite">
+                                            <option value="" disabled selected hidden>Choose your favourite</option>
+                                            <option value="volvo">Lukas the Panda</option>
+                                            <option value="saab">Andy the Lemur</option>
+                                            <option value="fiat">Glen the Gorilla</option>
+                                            <option value="audi">Mike the Alligator</option>
+                                            <option value="audi">Sarn & Lora the eagles family</option>
+                                            <option value="audi">Liz the Koala</option>
+                                            <option value="audi">Shake the Lion</option>
+                                            <option value="audi">Senja the Tiger</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <div class="monthly_gift">
+                                            <input class="monthly_gift_box" type="checkbox" id="monthly_gift"
+                                                name="monthly_gift" value="monthly_gift">
+                                            <label for="monthly_gift"> Make this a monthly recurring gift</label><br>
+                                        </div>
+                                        <button type="button" onclick="goToStep2()">Next <img
+                                                src="../assets/icons/Arrow.svg" alt="Arrow"></button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="form_step" id="step2">
+                                <div class="form_info">
+                                    <p>Billing Information:</p>
+                                </div>
+                                <div class="inputs">
+                                    <div class="billing_inputs">
+                                        <div>
+                                            <label for="fullName"><span>* </span>Your Name</label>
+                                            <input type="text" id="fullName" placeholder="First and last name" required>
+                                        </div>
+                                        <div>
+                                            <label for="email"><span>* </span>Your Email Address</label>
+                                            <input type="email" id="email" placeholder="Enter your email"
+                                                autocomplete="email" required>
+                                            <p>You will receive emails from the Online Zoo, including updates and news
+                                                on the latest discoveries and translations. You can unsubscribe at any
+                                                time.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="buttons">
+                                        <button class="back" type="button" onclick="goBackToStep1()">Back</button>
+                                        <button type="button" onclick="goToStep3()">Next <img
+                                                src="../assets/icons/Arrow.svg" alt="Arrow"></button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="form_step" id="step3">
+                                <div class="form_info">
+                                    <p>Payment Information:</p>
+                                </div>
+                                <div class="inputs">
+                                    <div class="payment_inputs">
+                                        <div class="card_info">
+                                            <div>
+                                                <label for="card"><span>* </span>Credit Card Number</label>
+                                                <input type="number" id="card" required>
+                                            </div>
+                                            <div>
+                                                <label for="cvv"><span>* </span>CVV Number</label>
+                                                <input type="number" id="cvv" required>
+                                            </div>
+                                        </div>
+                                        <div class="date">
+                                            <label for="month"><span>* </span>Expiration Date</label>
+                                            <div id="date">
+                                                <input type="number" id="month" placeholder="Month" min="1" max="12">
+                                                <input type="number" id="year" placeholder="Year" min="2024" max="2040">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="buttons">
+                                        <button class="back" type="button" onclick="goBackToStep2()">Back</button>
+                                        <button class="complete" type="button" onclick="completeDonation()">Complete
+                                            Donation</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="information">
+            <div class="did_you_know">
+                <h2>did you know?</h2>
+                <p>A ring-tailed lemur mob will gather in open areas of the forest to sunbathe. They sit in what some
+                    call a "yoga position" with their bellies toward the sun and their arms and legs stretched out to
+                    the sides. </p>
+            </div>
+            <div>
+                <div class="animal_info">
+                    <div class="list">
+                        <p><span>Common name: </span>&nbsp;&nbsp;&nbsp;&nbsp;Ring-Tailed Lemur</p>
+                        <p><span>Scientific name: </span>&nbsp;&nbsp;&nbsp;Lemur catta</p>
+                        <p><span>Type: </span>&nbsp;&nbsp;&nbsp;Mammals</p>
+                        <p><span>Size: </span>&nbsp;&nbsp;&nbsp;Head and body: 17.75 inches; tail: 21.75 inches</p>
+                        <p><span>Diet: </span>&nbsp;&nbsp;&nbsp;Herbivore</p>
+                        <p><span>Habitat: </span>&nbsp;&nbsp;&nbsp;Arid, open areas and forests</p>
+                        <p><span>Range: </span>&nbsp;&nbsp;&nbsp;Southeast Asia</p>
+                    </div>
+                    <img src="../assets/images/Did_you_know_lemur.png" alt="Lemur">
+                </div>
+                <h4>Ring-tailed lemurs are named for the 13 alternating black and white bands that adorn their tails.
+                    Unlike most other lemurs, ringtails spend 40 percent of their time on the ground, moving
+                    quadrupedally along the forest floor. Ring-tailed lemurs live in southwestern Madagascar, in arid,
+                    open areas and forests in territories that range from 15 to 57 acres (0.06 to 0.2 square kilometers)
+                    in size. As with all lemurs, olfactory communication is important for ringtails. Ring-tailed lemurs
+                    have scent glands on their wrists and chests that they use to mark their foraging routes. Ringtails
+                    eat leaves, flowers and insects. They can also eat fruit, herbs and small vertebrates.
+                    Females usually give birth to their first baby when they are three years old, and usually once a
+                    year every year after that. All adult females participate in raising the offspring of the group. The
+                    median life expectancy for a ring-tailed lemur is about 16 years.</h4>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer_nav">
+                <div class="footer_logos">
+                    <a href="../index.html"><img src="../assets/icons/Logo_white.svg" alt="Footer Logo"></a>
+                    <a href="https://www.yemdigital.com/"><img src="../assets/icons/Yem_Digital.svg"
+                            alt="Yem Digital Logo"></a>
+                    <a href="https://rs.school/courses/short-track"><img src="../assets/icons/Rs_school_js_logo.svg"
+                            alt="Rs School Logo"></a>
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="../index.html">About</a></li>
+                        <li><a href="./map.html">Map</a></li>
+                        <li><a href="./zoos_page_panda.html">Zoos</a></li>
+                        <li><a href="./contact_us.html">Contact us</a></li>
+                    </ul>
+                </nav>
+                <button onclick="openDonationPopup1()">donate for volunteers<svg width="25" height="22"
+                        viewBox="0 0 25 22" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z" />
+                    </svg>
+                </button>
+
+                <div id="donationPopup1" class="donation_popup_1">
+                    <div class="popup_content">
+                        <img class="close_popup" onclick="closeDonationPopup1()" src="../assets/icons/Close_popup.svg"
+                            alt="Close Pop Up">
+                        <img src="../assets/images/Donation_popup_1.png" alt="Donation Pop Up">
+                        <h2>together we care, save and protect!</h2>
+                        <p>Your most generous gift not only cares for countless animals, but it also offers hope and a
+                            vital lifeline to the world's most endangered wildlife relying on us to survive.</p>
+                        <div>
+                            <button class="btn">$20</button>
+                            <button class="btn">$30</button>
+                            <button class="btn">$50</button>
+                            <button class="btn">$80</button>
+                            <button class="btn">$100</button>
+                            <button class="btn">Other amount</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer_soc_networks">
+                <div class="copyright">
+                    <p>© 2021 DinaK</p>
+                    <p>© Yem Digital</p>
+                    <p>© RSSchool</p>
+                </div>
+                <div class="soc_networks">
+                    <a href="https://www.youtube.com/@RSSchool"><img src="../assets/icons/YouTube.svg"
+                            alt="YouTube"></a>
+                    <a href="https://www.instagram.com/rsschool_en?igsh=em1janI5bzZ0dXlx"><img
+                            src="../assets/icons/Instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/rsschoolEN"><img src="../assets/icons/Facebook.svg"
+                            alt="Facebook"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
